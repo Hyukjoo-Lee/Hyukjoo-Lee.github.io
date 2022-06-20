@@ -1,11 +1,10 @@
 # Site settings
-title: Jaydon Learning Blog # site title
-description: Study Blog to record what I have learned constantly.
-
-- # site description
-  
+title: Klise Theme # site title
+description: >- # site description
+  He's writing in Bahasa about web technology and experience as a journal 
+  for documentation things that he learned, meet him <a href="https://github.com/piharpi" target="_blank" rel="noopener">@github</a>.
 lang: en-US # default lang
-timezone: Canada/Pacific # set your timezone
+timezone: Asia/Jakarta # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/piharpi/jekyll-klise # site repo [optional]
 mode: dark # default theme "dark" | "light"
