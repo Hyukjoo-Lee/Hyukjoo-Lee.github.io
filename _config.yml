@@ -11,8 +11,9 @@ mode: dark # default theme "dark" | "light"
 # Profile settings
 author:
   name: Hyukjoo Lee # author name
-  bio: |- # tell to the world
-     I am Jaydon Lee, a Full-stack developer from Korea, currently living in Vancouver, Canada.\n
+  bio: - # tell to the world
+     I am Jaydon Lee, a Full-stack developer from Korea, currently living in Vancouver, Canada.
+     \n
      The blog for documentation about my programming journey.
   username: Hyukjoo-Lee # general username
   github: Hyukjoo-Lee # github username
