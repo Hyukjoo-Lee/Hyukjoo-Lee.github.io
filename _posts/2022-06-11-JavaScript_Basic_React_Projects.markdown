@@ -1,5 +1,5 @@
 ---
-title: "JavaScript: Basic React Projects"
+title: "{JavaScript} Basic React Projects"
 date: 2022-06-11 11:20:00 +07:00
 tags: [JavaScript, Mini-project]
 ---

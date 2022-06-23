@@ -1,5 +1,5 @@
 ---
-title: "Software Engineering: Agile"
+title: "{ Software Engineering } Agile"
 tags: [Software Engineering]
 date: 2022-01-19 13:50:00 +07:00
 description: Notes of Software Engineering

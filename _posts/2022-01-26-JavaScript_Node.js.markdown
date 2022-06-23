@@ -1,5 +1,5 @@
 ---
-title: "JavaScript: Node.js"
+title: "{JavaScript} Node.js"
 date: 2022-01-26 22:00:00 +07:00
 tags: [JavaScript, Node]
 ---

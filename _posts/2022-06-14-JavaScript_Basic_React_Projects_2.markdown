@@ -1,5 +1,5 @@
 ---
-title: "JavaScript: Basic React Projects_2"
+title: "{JavaScript} Basic React Projects_2"
 date: 2022-06-14 15:20:00 +07:00
 tags: [JavaScript, Mini-project, API, Publishing]
 description: "Movie service app using concepts I have learned from now on."
@@ -101,10 +101,8 @@ export default Movie;
 
 - npm i gh-pages
 - npm run build
-
 - push;
     - Inside package.json, 
-
      1. add at the end ' "homepage": "https://Hyukjoo-Lee.github.io/ReactJS_movie_web_service" '
      2. "deploy": "gh-pages -d build" ' 
          "predeploy" : "npm run build" (inside script)

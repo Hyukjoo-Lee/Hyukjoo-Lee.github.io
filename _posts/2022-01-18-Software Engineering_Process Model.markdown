@@ -1,5 +1,5 @@
 ---
-title: "Software Engineering: Process Model"
+title: "{ Software Engineering } Process Model"
 date: 2022-01-18 16:00:00 +07:00
 tags: [Software Engineering]
 description: Notes of Software Engineering

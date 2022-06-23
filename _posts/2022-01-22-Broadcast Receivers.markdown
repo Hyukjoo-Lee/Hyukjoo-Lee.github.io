@@ -1,5 +1,5 @@
 ---
-title: "Android Studio: Broadcast Receivers"
+title: "{ Android Studio } Broadcast Receivers"
 date: 2022-01-22 20:00:00 +07:00
 tags: [Java, Android Studio, Broadcast Receiver]
 description: "Notes of Android Studio: Broadcast Receivers"

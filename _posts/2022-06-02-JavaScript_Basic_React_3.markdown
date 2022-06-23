@@ -1,5 +1,5 @@
 ---
-title: "JavaScript: Basic React 3"
+title: {JavaScript} Basic React 3"
 date: 2022-06-03 18:00:00 +07:00
 tags: [JavaScript, React, Props, useEffect]
 ---

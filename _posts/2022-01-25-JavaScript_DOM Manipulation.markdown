@@ -1,5 +1,5 @@
 ---
-title: "JavaScript: DOM Manipulation"
+title: "{JavaScript} DOM Manipulation"
 date: 2022-01-25 16:00:00 +07:00
 tags: [JavaScript, DOM]
 description: "Notes of JS: DOM Manipulation"

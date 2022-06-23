@@ -1,5 +1,5 @@
 ---
-title: "Android Studio: Thread Demo"
+title: "{Android Studio} Thread Demo"
 date: 2022-01-28 12:50:00 +07:00
 categories: [Java, Android Studio, Thread]
 description: "Notes of Android Studio: Thread Demo"

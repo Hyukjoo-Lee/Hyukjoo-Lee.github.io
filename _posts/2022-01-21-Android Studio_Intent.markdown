@@ -1,5 +1,5 @@
 ---
-title: "Android Studio: Explicit Intent & Implicit Intent View binding"
+title: "{ Android Studio } Explicit Intent & Implicit Intent View binding"
 date: 2022-01-21 17:00:00 +07:00
 tags: [Java, Android Studio, Intent]
 description: "Notes of Android Studio: Explicit Intent & Implicit Intent View binding"

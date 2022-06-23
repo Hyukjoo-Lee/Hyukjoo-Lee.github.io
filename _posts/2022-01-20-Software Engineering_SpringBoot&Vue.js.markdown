@@ -1,5 +1,5 @@
 ---
-title: "Software Engineering: SpringBoot & Vue.js"
+title: "{ Software Engineering } SpringBoot & Vue.js"
 date: 2022-01-20 13:50:00 +07:00
 tags: [Software Engineering]
 description: Notes of Software Engineering

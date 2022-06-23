@@ -1,5 +1,5 @@
 ---
-title: "Android Studio: With Firebase"
+title: "{Android Studio} With Firebase"
 date: 2022-01-24 23:00:00 +07:00
 tags: [Java ,Android Studio, Firebase]
 description: "Notes of Android Studio: Firebase environment setting"

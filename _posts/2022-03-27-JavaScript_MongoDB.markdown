@@ -1,5 +1,5 @@
 ---
-title: "JavaScript: MongoDB"
+title: "{JavaScript} MongoDB"
 date: 2022-03-27 22:00:00 +07:00
 tags: [JavaScript, MongoDB, Database]
 ---
