@@ -5,7 +5,7 @@ tags: [Software Engineering]
 description: Notes of Software Engineering
 ---
 
-**Software Process Flow**
+**Software Process Model**
 
 ### Process Flow
 
