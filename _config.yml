@@ -3,7 +3,7 @@ title: Jaydon Learning Blog  # site title
 description: >- # site description
   Study Blog to record what I have learned.
 lang: en-US # default lang
-timezone: Asia/Jakarta # set your timezone
+timezone: America/Vancouver # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
 repo: https://github.com/Hyukjoo-Lee/-Hyukjoo-Lee.github.io # site repo [optional]
 mode: dark # default theme "dark" | "light"
