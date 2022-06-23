@@ -1,5 +1,5 @@
 ---
-title: "{JavaScript} Basic React Projects_2"
+title: "{ JavaScript } Basic React Projects_2"
 date: 2022-06-14 15:20:00 +07:00
 tags: [JavaScript, Mini-project, API, Publishing]
 description: "Movie service app using concepts I have learned from now on."

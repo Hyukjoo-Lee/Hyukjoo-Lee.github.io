@@ -1,5 +1,5 @@
 ---
-title: "{Software Engineering} Project management_theory"
+title: "{ Software Engineering } Project management_theory"
 date: 2022-02-12 21:35:00 +07:00
 tags: [Software Engineering, Management, Theory, Estimation]
 ---

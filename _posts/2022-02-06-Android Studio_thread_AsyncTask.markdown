@@ -1,5 +1,5 @@
 ---
-title: "{Android Sudio} Thread Demo(2)_AsyncTask"
+title: "{ Android Sudio } Thread Demo(2)_AsyncTask"
 date: 2022-02-06 17:00:00 +07:00
 tags: [Android Studio, Thread, AsyncTask]
 ---

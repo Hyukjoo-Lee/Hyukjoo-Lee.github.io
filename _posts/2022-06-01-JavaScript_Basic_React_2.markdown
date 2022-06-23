@@ -1,5 +1,5 @@
 ---
-title: "{JavaScript} Basic React 2"
+title: "{ JavaScript } Basic React 2"
 date: 2022-06-01 09:40:00 +07:00
 tags: [JavaScript, React, JSX, useState]
 ---

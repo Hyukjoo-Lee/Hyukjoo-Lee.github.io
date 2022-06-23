@@ -1,5 +1,5 @@
 ---
-title: "{Software Engineering} MVC_Controller (Source code)"
+title: "{ Software Engineering } MVC_Controller (Source code)"
 date: 2022-01-30 15:00:00 +07:00
 tags: [Java, Software Engineering, MVC, Controller]
 ---

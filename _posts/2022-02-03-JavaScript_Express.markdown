@@ -1,5 +1,5 @@
 ---
-title: "{JavaScript} npm Express & ejs"
+title: "{ JavaScript } npm Express & ejs"
 date: 2022-02-03 21:50:00 +07:00
 tags: [JavaScript, framework, express, ejs]
 ---
