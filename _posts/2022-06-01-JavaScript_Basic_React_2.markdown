@@ -8,7 +8,7 @@ tags: [JavaScript, React, JSX, useState]
 
 ## Introduction of JSX
 
-- Syntax extension to JavaScript
+- 'J'avaScript 'S'yntax e'X'tension
 - JSX allows you to write HTML in React.
 - JSX makes it easier to write and add HTML in React.
 - Babel is a JavaScript compiler which mainly used to convert code into a backwards compatible version of JavaScript in current.
@@ -17,12 +17,12 @@ tags: [JavaScript, React, JSX, useState]
 ```javascript
 const root = document.getElementById("root");
 
-    const span = React.createElement(
-     "h3",
+    const title = React.createElement(
+     "h1",
      {
         onMouseEnter: () => console.log("mouse enter"),
      },
-     "Hello I am a span"
+     "Hello I am a title"
     );
 
     const btn = React.createElement(
@@ -40,11 +40,12 @@ const root = document.getElementById("root");
 ```
 
 #### After (Compile 후)
-```javascript
+```html
 <body>
   <div id="root"></div>
 </body>
 
+<!-- Import CDN links -->
 <script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 <!-- Import @babel/standalone -->
@@ -52,11 +53,12 @@ const root = document.getElementById("root");
 <!-- will compile and execute 'All' script tags with type = "text/babel" or "text/jsx" -->
 <script type="text/babel">
 
+
   /* Two ways; 1. return an element 2. arrow function ( prefered ) */
   function Title() {
-    return (<h3 id="title" onMouseEnter={() => console.log("mouse entered")}>
-      Hello I'am a title
-    </h3>);
+    return (<h1 id="title" onMouseEnter={() => console.log("mouse entered")}>
+      Hello I am a title
+    </h1>);
   }
 
   const Button = () =>
@@ -83,20 +85,12 @@ const root = document.getElementById("root");
 ## State
 - State is basically where the data will be.
 
-#### Before (render() 함수를 계속 불러줘야 함)
-```javascript
-<!DOCTYPE html>
-<html>
-
-<head>
-
-</head>
-
+#### Before - render() 함수를 계속 불러줘야 했음
+```html
 <body>
   <div id="root"></div>
 </body>
-<script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+...
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
 
@@ -106,7 +100,7 @@ const root = document.getElementById("root");
 
   function countUp() {
     counter = counter + 1;
-    render();
+    render(); // 변경된 데이터 저장을 위해 render() 함수를 계속 불러와야 했음
   }
 
   function render() {
@@ -133,24 +127,23 @@ const root = document.getElementById("root");
 - 'undefined' is data value
 - 'f' is a function which is used to modify data status 
 
-#### After (using State)
+#### After - render() 함수를 계속 불러줄 필요 없이 자동으로 업데이트
 
 ```javascript
   const root = document.getElementById("root");
 
   function App() {
-
-    /* modifier(setCounter) 함수를 사용하여 
-    state 를 바꾸면 
-    App component 가 재 생성되고
-    화면에 자동으로 렌더링 해줌
+    /* 
+    modifier(setCounter) 함수를 사용하여 state 를 바꾸면 
+    App component 가 재 생성되고 화면에 자동으로 렌더링 해줌
 
     즉, 모든 요소를 재생성해서 다시 렌더링 해준다.
     */
 
-    /* counter: 값; 
+    /* 
+    counter: 값; 
     setCounter: 값을 변경해 줄 function;
-    useState(x) x is default value
+    useState(x): x is default value
     */
     const [counter, setCounter] = React.useState(0);
 
@@ -171,20 +164,20 @@ const root = document.getElementById("root");
 
 ```
 
+#### Practice more about using State
 
-### State 2
-
-```javascript
+```html
 <script type="text/babel">
 
   /*
     Notice that you are using the jsx
   */
+
   /* 
     1. 분을 초로, 초를 분으로 자동으로 변환하는 Converter 를 만들 것
     2. state 활용
     3. onChange function; one in charge of basically updating the data
-    4. flip & reset function
+    4. flip & reset function 구현
     5. disabled property 활용
   */
   function App() {
@@ -192,14 +185,16 @@ const root = document.getElementById("root");
     const [amount, setAmount] = React.useState(0);
     const [inverted, setInverted] = React.useState(false);
 
+    // Set the previous amount to changed value
     const onChange = (event) => {
       /*console.log(event.target.value);*/
       setAmount(event.target.value);
     }
 
-
+    // Reset the amount
     const reset = () => setAmount(0);
 
+    // Enable or disable flip for two input boxes and converted value
     const onFlip = () => {
       reset();
       setInverted((current) => !current);
@@ -246,6 +241,4 @@ const root = document.getElementById("root");
 </script>
 ```
 
-### Challenge
-
-https://github.com/Hyukjoo-Lee/ReactJS_Basic/tree/main/react-begin
+[Challenge Source code](https://github.com/Hyukjoo-Lee/ReactJS_Basic/tree/main/react-begin)

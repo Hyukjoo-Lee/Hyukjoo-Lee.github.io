@@ -12,7 +12,7 @@ tags: [JavaScript, Mini-project]
 - Three dots(...) in JavaScript : is called the Spread Syntax or Spread Operator. 
     - This allows an iterable such as an array expression 
     - ...array => means all elements in an array
-- Do not modify the status directly. Use a function that modifies the state; State must always be 'New'!
+- Do not modify the status directly. Use a function that modifies the state; State must always be 'New', cannot Be Modified!
 - The map function takes all elements of the array and converts them into a new array.
     - If there are six elements in the array, a function is executed six times.
 - ReactJS basically recognizes all of elements in the array, so you have to give them unique keys
@@ -30,7 +30,7 @@ import { useState } from "react";
 function App() {
 
   const [toDo, setToDo] = useState("");
-  const [toDos, setToDos] = useState([]);
+  const [toDos, setToDos] = useState([]); // an array of todo
   const onChange = (event) => setToDo(event.target.value);
 
   const onSubmit = (event) => {
@@ -38,9 +38,9 @@ function App() {
     if (toDo === "") {
       return;
     }
-    // In normal js, we would use toDos.push when we want to add an element to an array
-    // But, remember we never modify a state directly!! We use a function which modifies a state
-    // state should be always 'NEW'
+    // In normal js, we would use toDos.push when we want to add an element to an array.
+    // But, remember we never modify a state directly!! We use a function which modifies a state.
+    // State should be always 'NEW'.
     setToDos(currentArray => [toDo, ...currentArray]);
     setToDo("");
   };
@@ -76,7 +76,7 @@ export default App;
 
 #### What I learned
 - Fetching API and get the data in json format
-- Getting selected value using onChange; 원하는 값을 value={} 에 대입
+- Getting a selected value using onChange; 원하는 값을 value={} 에 대입
 - handleInput
 
 

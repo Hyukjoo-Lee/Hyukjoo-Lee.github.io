@@ -1,24 +1,25 @@
 ---
 title: "{ JavaScript } Basic React 3"
 date: 2022-06-03 18:00:00 +07:00
-tags: [JavaScript, React, Props, useEffect]
+tags: [JavaScript, React, Props, Hooks]
 ---
 
-**Props**
+**React Props & React Hooks**
+
+## React Props
+- Props are arguments passed into React components.
+- To pass props into a component, use the same syntax as HTML attributes. e.g. <Button text= {"Send"}>
+- React.js does not know the props' type = does not occur any error, even if you pass the wrong data type.
+    - PropType: Allows you to check each different types.
 
 #### Source Code
-
-```javascript
-<script type="text/babel">
-
+```html
+<script>
     /*
     shortCut : 'props.text' => '{ text }'
-    React.js does not know the props' type -> does not occur an error even if you pass the wrong data type
-    ==> PropType: allows you to check each different types
     fontSize = 14 is the default value
     */
     function Btn({ text, fontSize = 14 }) {
-
         return <button
             style={{
                 backgroundColor: "tomato",
@@ -49,30 +50,30 @@ tags: [JavaScript, React, Props, useEffect]
 
     const root = document.querySelector(".root");
     ReactDOM.render(<App />, root);
-
-</script>
-
-</html>
+    </script>
 ```
 
 ## CSS modules
 
 - There were two ways;
-    1. create styles.css, then import "./styles.css"
-    2. Using html like..  ```html <button style={{ ... }} > ```
-- Now, using CSS modules, we can create an isolated css file for a specific component
-- 예를들어 Button.module.css 에서도 클래스 이름 title 를 사용하고, App.module.css 에서도 클래스 이름 title 를 사용한다고 가정해 봤을 때, 같은 클래스 이름이라도 다르게 스타일을 적용할 수 있다 = 스타일을 독립적으로 사용가능
+    1. Create styles.css, then import "./styles.css"
+    2. Using HTML syntax like..  ```html <button style={{ ... }} > ```
+- Now, using CSS modules, we can create an isolated css file for a specific component.
+- The CSS inside a module is available only for the component that imported it, and you do not have to worry about name conflicts.
+- 예를들어 Button.module.css 에서도 클래스 이름 title 를 사용하고, App.module.css 에서도 클래스 이름 title 를 사용한다고 가정해 봤을 때, 같은 클래스 이름이라도 다르게 스타일을 적용할 수 있다.
 
 #### Source Code
 ```javascript
 import Button from "./Button";
 // import "./styles.css"; 대신에 따로 css 파일을 만들어 적용 할 수 있다.
 import styles from "./App.module.css";
+import secondStyles from "./SecondApp.module.css";
 
 function App() {
   return (
     <div>
-      <h1 className={styles.title}>Welcome back!!!</h1>
+      <h1 className={styles.title}>Title 1</h1>
+      <h1 className={secondStyles.title}>Title 2</h1>
       <Button text={"Continue"} />
     </div>
   );
@@ -82,25 +83,31 @@ export default App;
 
 ```
 
+## React Hooks
+- Hooks allow function components to have access to state and other React features. 
+- useState = Hook to keep track of the application state.
+
 ## useEffect
 
 - Normally, everytime when a state changes, the entire component is rendered again = Codes runs repeatedly
-- How we can render a component when a condition is changed ?
+- How we can render a component at ONCE when a condition is changed ?
 - For example, when we get the data from the API, it is better to get API only once.
 - There are two arguments
     - useEffect(1ST, [ 2ND ])
         - 1st Argument: A function which allows you running 'ONE' specific function at once a time.
-        - 2nd Argument: dependencies = things that React.js should watch = one OR more states that tells react.js 'if a specific state 'keyword' changes, run a function that is stated in 1st argument.
+        - 2nd Argument: dependencies = things that React.js should watch. They can be one OR more states that tells React.js like. if a specific 'keyword' changes, run a function in the 1st argument.
 
 #### Source Code
+
 ```javascript
 import { useState, useEffect } from "react";
 
 /**
- * state 가 변화 할 때마다 전체 App 컴포넌트는 re-render 된다.
- * 처음에만 render 되게 어떻게 만들까?
- * 예를들어, api 를 통해 데이터를 가져올 때.. api 를 한번만 가져오고 state가 업데이트 될 때, re-render 되는 걸 원치 않을 것.
- * 
+ * state 가 변화 할 때마다 전체 App Component는 re-render 된다.
+ * 앱이 실행되었을 때, 처음에만 render 되게 어떻게 만들까?
+ * 예를들어, API 를 통해 데이터를 가져올 때, API 를 한번만 가져오고 state가
+ * 업데이트 될 때 마다 Component 가 계속 re-render 되는 걸 원치 않을 것
+ * 이런경우에 useEffect 를 활용한다.
  */
 function App() {
   const [counter, setValue] = useState(0);
@@ -136,14 +143,12 @@ function App() {
 }
 
 export default App;
-
 ```
 
-
-### CleanUp function
-  - It is not used commonly, but it is good to know for you
-  - A function which runs when a component is destroyed
-  - Basically, We return a function with an useEffect function 
+### useEffect cleanup function
+  - It is not used commonly, but it is good to know.
+  - A function which runs when a component is destroyed.
+  - Basically, We return a function with an useEffect function. 
 
 #### Source Code
 
@@ -151,11 +156,8 @@ export default App;
 import { useState, useEffect } from "react";
 
 /**
-  <extra> 
-  Cleanup function =
-  어떠한 component 가 destroyed 될 때 실행되는 function
+ * Cleanup function = 어떠한 component 가 destroyed 될 때 실행되는 함수
  */
-
 function Hello() {
 
   // function destroyedFn() {
@@ -169,7 +171,7 @@ function Hello() {
 
   // useEffect(effectFn, []);
 
-  // Make that codes shorter
+  // Make codes above shorter
   useEffect(() => {
     console.log("hi :)");
     return () => console.log("bye :)");
@@ -192,5 +194,4 @@ function App() {
 }
 
 export default App;
-
 ```
