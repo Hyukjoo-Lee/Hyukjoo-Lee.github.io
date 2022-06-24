@@ -6,11 +6,12 @@ excerpt: Hello peeps, I'm student of computer science from South Korea, living i
 comments: false
 ---
 
-I am Jaydon Lee, Fullstack developer from Korea, currently living in Vancouver, Canada. The blog for documentation about my programming journey, I also enjoys to learning web & app technology; but I often forgot what I learned 😅, that is the reason why I am doing the writing here.
+I am Jaydon Lee, Full-stack developer from Korea, currently living in Vancouver, Canada. 
+I really enjoy learning web&app technology. This is a blog for documentation about my programming journey.
 
-If you have a question about me, just email me.
+If you have any question, just email me 😄.
 
-**U may need ✨**
+**You may need ✨**
 
 - {{ site.author.email }}
 - github.com/{{ site.author.github }}
