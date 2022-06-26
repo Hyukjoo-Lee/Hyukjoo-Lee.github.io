@@ -124,7 +124,7 @@ function App() {
       </select>}
       <h2>Please enter the amount</h2>
       <div>
-        <input type="number" value={amount} onChange={handleInput} />$
+        $<input type="number" value={amount} onChange={handleInput} />
       </div>
       <h2>You can get {amount / cost} {symbol}</h2>
     </div>);
