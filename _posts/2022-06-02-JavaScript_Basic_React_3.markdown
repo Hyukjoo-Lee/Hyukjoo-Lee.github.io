@@ -1,7 +1,7 @@
 ---
-title: "{ JavaScript } Basic React 3"
+title: "{ ReactJS } Basic React 3"
 date: 2022-06-03 18:00:00 +07:00
-tags: [JavaScript, React, Props, Hooks]
+tags: [JavaScript, ReactJS, Props, Hooks]
 ---
 
 **React Props & React Hooks**

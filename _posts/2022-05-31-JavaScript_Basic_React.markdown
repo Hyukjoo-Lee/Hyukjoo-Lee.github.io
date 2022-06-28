@@ -1,7 +1,7 @@
 ---
-title: "{ JavaScript } Basic React"
+title: "{ ReactJS } Basic React"
 date: 2022-05-31 20:30:00 +07:00
-tags: [JavaScript, React, Elements, Installation]
+tags: [JavaScript, ReactJS, Elements, Installation]
 ---
 
 **React.js**

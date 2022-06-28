@@ -1,7 +1,7 @@
 ---
-title: "{ JavaScript } Basic React Projects_2"
+title: "{ ReactJS } Basic React Projects_2"
 date: 2022-06-14 15:20:00 +07:00
-tags: [JavaScript, Mini-project, API, Publishing]
+tags: [JavaScript, ReactJS, Mini-project, API, Publishing]
 description: "Movie service app using concepts I have learned til now."
 ---
 
