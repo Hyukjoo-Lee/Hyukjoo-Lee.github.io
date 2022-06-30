@@ -24,10 +24,12 @@ map.put(2, "Rachel");
  
 System.out.println(map); // Rachel will be printed
 ```
+
 **key 값은 중복 X, value 값은 중복 O. key 값이 중복된다면 최종 2에 저장된 value 는 "Rachel"로 나중에 입력된 key의 value로 덮어 씌어 진다.**
 
-**HashMap: 반복문으로 데이터 꺼내오기**
+#### HashMap: 반복문으로 데이터 꺼내오기
 - Iterator;  컬렉션에 저장되어 있는 데이터를 읽어오는 방법 중 하나
+
 ```java
 public interface Iterator {
  
