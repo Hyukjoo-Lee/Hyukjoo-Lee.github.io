@@ -47,3 +47,8 @@ description: "The explanation how react native work with IOS and Android."
 - You can use JavaScript to access your platform's API and we have use behaviors of UI using react components.
 - Many Components and APIs have disappeared as it was hard to maintain all components and APIs.
 - So, we have to rely on the community to create and maintain other Components.
+- We must find and use 3rd party component; e.g. There are Statusbar made from React Native Team or from Expo Team.
+
+### Rules
+1. We cannot use <div>, we must use <View>.
+2. Normally, people separate StyleSheet and code.
