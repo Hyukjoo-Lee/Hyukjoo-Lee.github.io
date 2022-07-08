@@ -16,13 +16,13 @@ description: "The explanation how react native work with IOS and Android."
 
 ```java
 HashMap<Integer, String> nameMap = new HashMap<Integer, String>();
-// How to put data
-map.put(1, "Nicollas");
-map.put(2, "Hyukjoo");
-map.put(3, "Jaydon");
-map.put(2, "Rachel");
+
+nameMap.put(1, "Nicollas");
+nameMap.put(2, "Hyukjoo");
+nameMap.put(3, "Jaydon");
+nameMap.put(2, "Rachel");
  
-System.out.println(map); // Rachel will be printed
+System.out.println(nameMap); // Rachel will be printed
 ```
 
 **key 값은 중복 X, value 값은 중복 O. key 값이 중복된다면 최종 2에 저장된 value 는 "Rachel"로 나중에 입력된 key의 value로 덮어 씌어 진다.**
