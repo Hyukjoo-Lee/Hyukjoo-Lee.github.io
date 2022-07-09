@@ -9,33 +9,33 @@ description: "About Styled components."
 
 ### Introduction of Styled-component
 
-1. What is styled-component?
+<em>What is styled-component?</em>
 
 - Styled-components is a popular library that is used to style React applications
 - It allows you write actual CSS in your JavaScript.
 
-2. How to use styled-components in a React application.
+<em>How to use styled-components in a React application.</em>
 
 - 1st. Import styled-component.
 - 2nd. Name of the HTML tag with dot(.).
 - 3rd. Write normal css code inside backtick(``).
 
-3. How to create 'configurable property' using props.
+<em>How to create 'configurable property' using props.</em>
 
 - background-color: ${(props) => props.bgColor}; 2)`<Box bgColor="red" />`
 
-4. How to add common attributes.
+<em>How to add common attributes.</em>
 
 - We know the same attributes are repeated usually.
 - e.g. Many Input with <em>'required:true'</em>
 - Instead of writing required many times, just add once like below.
 - const Input = styled.input.attrs({ required: true})
 
-5. How to extend a component (bringing all of properties from a component.)
+<em>How to extend a component (bringing all of properties from a component.)</em>
 
 - `` const Circle = styled(Box)`border-radius: 50px`  ``
 
-6. How to change only HTML tag (e.g. div => header); But same style applied (스타일을 그대로 가져오면서 html 태그명만 변경하는법)
+<em>How to change only HTML tag (e.g. div => header); But same style applied (스타일을 그대로 가져오면서 html 태그명만 변경하는법)</em>
 
 - using 'as' = props
 - e.g. `<Button as="a">`
