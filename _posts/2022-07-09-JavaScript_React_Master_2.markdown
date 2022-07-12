@@ -7,10 +7,11 @@ description: "Styled Components + TypeScript + ReactJS."
 
 **TypeScript with Styled-component**
 
-<em> How to type functions and arguments </em>
-    - 'Proptypes' allows you check the types of props after codes run (JS).
-    - While, 'interface' allows you check the types of props before the codes run (TS).
-    - Interface: The explanation about the object shape of props
+<em> How to type functions and arguments?</em>
+
+- 'Proptypes' allows you to check the types of props after codes run (JS).
+- While, 'interface' allows you check the types of props before the codes run (TS is a strongly typed language).
+- Interface: The explanation of the shapes of the props.
 
 ```javascript 
 // 사용 될 props 의 타입을 정의.
@@ -19,9 +20,9 @@ interface ContainerProps {
 }
 ```
 
-<em> How to type pass and receive from components </em>
-    - It is not that different from what we did in JS
-    - But, we can define 'CircleProps'
+<em> How to pass and receive props from components? </em>
+- It is not that different from what we did in JS
+- But, we can define 'CircleProps'
 
 ```javascript
     // Pass the props
@@ -40,7 +41,7 @@ interface ContainerProps {
     `; 
 ```
 
-<em> How to make props not required or required </em>
+<em> How to make props required or optional? </em>
 
 ```javascript
 
@@ -78,8 +79,8 @@ export default Circle;
 ```
 
 **More Practice**
-
 ### Source Code  (own practice)
+
 ```javascript
 import styled from "styled-components";
 
@@ -113,9 +114,9 @@ function Hello({ txtColor }: HelloProps) {
 export default Hello;
 ```
 
-#### Forms (How to handle events)
+#### Forms (How to handle events?)
 - SyntheticEvent
-    - How the type system look like in the library (ReactJS)
+    - How the type system look like in the library (ReactJS)?
   ```javascript
   const onClick = (event: React.FormEvent<HTMLButtonElement>)
   ```
