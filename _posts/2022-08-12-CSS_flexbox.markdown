@@ -7,21 +7,25 @@ description: "CSS Concepts Reviews"
 
 **FlexBox**
 
-#### life Before Flexbox
+#### - life before flexbox
 
 **Display values**
 
 - block: It does not allow locate any elements next to it.
 - inline - Loses all of attributes in a block = there is no width & height.
 - inline-block - Keep being a block but elements can be next each other
+
   problem: it creates unexpected margin between elements = you should calculate the layout.
+
 - flex - Flexbox, it solves a problem of inline-block
 
-#### first Rules of Flexbox
+#### - first rules of flexbox
 
-- Flex box do not talk to children.
-- If you want to move something in a flexbox, you have to create flexbox container.
-- box 들의 parent 가 container 이고, they should be direct children (adjusted).
+- Flexbox does not talk to children.
+- If you want to move something in a flexbox, you have to create a flexbox container.
+- box's parent is a container, and they should be direct children (adjusted).
+
+**(Note that we are not coding anything about boxes)**
 
 ```html
 ...
@@ -48,11 +52,9 @@ description: "CSS Concepts Reviews"
 }
 ```
 
-**Note that we are not coding anything about boxes.**
+#### - main axis & Cross Axis
 
-#### main axis & Cross Axis
-
-- default flex-direction = row.
+- default flex-direction is 'row'.
 - If, flex-direction is row,
   - justify-content: changes the location of children with 'main-axis' direction.
   - align-items: changes the location of children with 'cross-axis' direction.
@@ -63,37 +65,37 @@ description: "CSS Concepts Reviews"
 
 **justify-content values**
 
-- space-between - Distribute items evenly
+- space-between: Distribute items evenly.
   The first item is flush with the start,
-  The last is flush with the end
-- space-around - Distribute items evenly
-  Items have a half-size space
+  and the last is flush with the end.
+- space-around: Distribute items evenly
+  Items have a half-size space.
 
 **align-items values**
 
 - stretch: fill whole full height of an element til wrapper height.
 
-#### align-self and order
+#### - align-self and order
 
-**nties for children**
+**properties for children**
 
 - align-self : cross-axis but only for a children.
 - order : default order is '0', useful when you are not allowing to modify html due to some reasons.
 
-#### wrap, nowrap, reverse, align-content
+#### - wrap, nowrap, reverse, align-content
 
-<em>wrap & nowrap</em>
+##### wrap & nowrap
 
 - Even if a browser size is shrinked, flex property allows you to align children in the same line.
 - It means flex property changes the width of children automatically.
 - flex-wrap determines how you deal with the width of child.
 
-  **flex-wrap values**
+**flex-wrap values**
 
-  - wrap: Respect the width of child.
-  - nowrap: Disregard the width of child.
+- wrap: Respect the width of child.
+- nowrap: Disregard the width of child.
 
-<em>reverse</em>
+##### reverse
 
 **flex-direction values**
 
@@ -102,13 +104,13 @@ description: "CSS Concepts Reviews"
 - flex-wrap: wrap-reverse;
   wrap but, cross-start and cross-end are permuted.
 
-<em>align-content & justify-content</em>
+##### align-content & justify-content
 
 - Both plays a role in adjusting spaces between elements.
 - align-content: Align lines within the flex container when there is 'extra space' in the cross-axis.
 - justify-content: Align individual elements within the main-axis.
 
-#### flex-grow & flex-shrink
+#### - flex-grow & flex-shrink
 
 - flex-grow, flex-shrink are properties that we can give to child
 - They are useful when we do responsive design.
@@ -157,9 +159,40 @@ description: "CSS Concepts Reviews"
 }
 
 .boxes_2 {
-   flex-direction: column-reverse;
-   justify-content: flex-start; // 위가 아닌 아래 정렬이 됨.
+  flex-direction: column-reverse;
+  justify-content: flex-start; // 위가 아닌 아래 정렬이 됨.
 }
 ```
 
-[Game for practice](https://flexboxfroggy.com/#ko)
+<em>order 를 사용하면 elements 들의 순서를 바꿀 수 있다</em>
+
+- order의 기본 값은 0이며, 양수나 음수로 바꿀 수 있다.
+
+<em>align-self는 개별 요소에 적용할 수 있는 또 다른 속성</em>
+
+- 이 속성은 align-items가 사용하는 값들을 인자로 받으며, 그 값들은 지정한 요소에만 적용
+
+<em>flex-wrap</em>
+
+- nowrap: 모든 요소들을 한 줄에 정렬.
+- wrap: 요소들을 여러 줄에 걸쳐 정렬.
+- wrap-reverse: 요소들을 여러 줄에 걸쳐 반대로 정렬.
+
+<em>flex-flow</em>
+
+- flex-direction과 flex-wrap이 자주 같이 사용되기 때문에 이 둘을 대신 할 수 있는 속성.
+- 두 속성의 값들을 인자로 받음.
+- flex-flow: row wrap; 요소들을 가로선 상의 여러줄에 걸쳐 정렬.
+- flex-flow: column wrap; 요소들을 세로선 상의 여러줄에 걸쳐 정렬.
+
+<em>align-content</em>
+
+- 여러 줄 사이의 '간격' 을 지정
+- flex-start: 여러 줄들을 컨테이너의 꼭대기에 정렬.
+- flex-end: 여러 줄들을 컨테이너의 바닥에 정렬.
+- center: 여러 줄들을 세로선 상의 가운데에 정렬.
+- space-between: 여러 줄들 사이에 동일한 간격.
+- space-around: 여러 줄들 주위에 동일한 간격.
+- stretch: 여러 줄들을 컨테이너에 맞도록 늘림.
+
+##### [Play CSS game to practice](https://flexboxfroggy.com)
