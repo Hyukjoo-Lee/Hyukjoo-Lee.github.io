@@ -7,19 +7,19 @@ description: "CSS Concepts Reviews"
 
 **FlexBox**
 
-#### - life before flexbox
+#### - why do we need flexbox
 
 **Display values**
 
 - block: It does not allow locate any elements next to it.
 - inline - Loses all of attributes in a block = there is no width & height.
-- inline-block - Keep being a block but elements can be next each other
+- inline-block - Keeps being a block and put boxes next to each other.
 
-  problem: it creates unexpected margin between elements = you should calculate the layout.
+  problem: it creates the unexpected margins between elements = you should calculate the layout.
 
-- flex - Flexbox, it solves a problem of inline-block
+- flex - Flexbox, it solves the problem of inline-block
 
-#### - first rules of flexbox
+#### - first rule of flexbox
 
 - Flexbox does not talk to children.
 - If you want to move something in a flexbox, you have to create a flexbox container.
