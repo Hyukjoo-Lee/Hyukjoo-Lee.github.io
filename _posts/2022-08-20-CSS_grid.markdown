@@ -7,30 +7,157 @@ description: "CSS Concepts Reviews"
 
 **Grid**
 
-#### - life before grid
+#### Why we need css grid?
 
-- why we need css grid?
+- CSS grid is the 2-D layout system for webpage design.
+- This system helps to design the complex layout.
+- Flexbox makes it easy to put elements on left & right side & center.
+- But, there is a limit to make a grid format.
+- Similiar with the flexbox, you should talk to mostly with a parent, not with a child.
 
-#### - grid basic concepts
+#### rows and columns
 
-#### - grid template areas
+- grid-template-rows: tracks the size of rows.
+- grid-template-columns: tracks the size of columns.
+- gap: shortcut for rows&columns.
+- To give the same size to height&width for rows OR columns, you can utilize repeat() function.
+- e.g. grid-template-columns: repeat(4, 200px)
 
-##### - rows and columns
+#### grid template areas
 
-##### - shortcuts
+- grid-template-areas is a property to organize the grid structure.
+- You can organize the structure by defining what you are using for each elements.
+- e.g.
 
-##### - line naming
+```css
+ .grid {
+  display: grid;
+  < auto: use all areas >
+  grid-template-columns: auto 200px;
+  grid-template-rows: 100px repeat(2, 200px) 100px;
+  grid-template-areas:
+    "header header header header"
+    < .: allowing the empty spaces >
+    "content content . nav"
+    "content content . nav"
+    "footer footer footer footer";
+  }
 
-##### - grid template
+  .header {
+  background-color: aquamarine;
+  grid-area: header;
+  }
+```
 
-##### - place items
+##### rows and columns
 
-##### - auto columns and rows
+- There is an another way to make the structure.
+- You can give values; grid-column-start, grid-column-end, grid-row-start, grid-row-end property to each elements.
+- grid-column-start, grid-row-start: starting with a value upper than 1.
+- grid-column-end, grid-row-end: ending with a value upper than 2.
 
-##### - minmax
+```css
+    /* shortcuts */
+    grid-column: 1 / 4
+    grid-column: 1 / -1;
+  /* You can also count from the end of elements (-1,-2). */
 
-##### - auto-fit & auto-fill
 
-##### - min-content & max-content
+```
 
-##### - grid garden game
+- span: show how much spaces are allocated.
+- e.g.
+
+```css
+grid-row: span 2; // 2 rows
+grid-columns: span 2; // 2 columns
+```
+
+- Notice that it does not express the start & end point so that you should consider the relationship betweeen other elements.
+- e.g.
+
+```css
+  .nav {
+  grid-row: 1 / 3;
+  }
+
+  .content {
+  Since there is no starting point for content, content does not show.
+  grid-row: span 2;
+  /* You should define start point foor content
+  grid-row: 2 / span 2;
+  OR
+  span for nav tag */
+  }
+```
+
+##### line naming
+
+- You can give name for lines.
+
+```css
+  grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line]
+  grid-template-rows: repeat(4, [my-line] 100px );
+  grid-column: first-line / fourth-line;
+  grid-row: my-line 2 / my-line 4;
+```
+
+##### grid template
+
+- 1fr: fraction means taking as much as spaces available in the 'container' (more elastic than pixel).
+
+```
+grid-template-columns: repeat(4, 1fr); : takes as much as spaces available in the container, and repeat four times.
+```
+
+=> For responsive design, you'd better to use 1fr or % than px.
+
+- You need to set height when you are using fraction; note that grid does not have any height.
+- height: 50vh (half size of the screen)
+
+- grid-template: shortcut of grid-template-areas, grid-template-columns, grid-template-rows
+  e.g.
+  gird-template:
+  "header header header header" 1fr
+  "content content content nav" 2fr
+  "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr; (row size / column size)
+
+  +naming
+  gird-template:
+  [header-start] "header header header header" 1fr [header-end]
+  [content-start] "content content content nav" 2fr [conent-end]
+  [footer-start] "footer footer footer footer" 1fr [footer-end] / 1fr 1fr 1fr 1fr;
+
+##### place items
+
+- Inside a grid-container,
+- Inside a grid-container, justify-items, align-items default is stretch for children.
+
+- justify-items = horizontal, align-items = vertical.
+
+  ```
+  start: place items to the start point of a cell.
+  center: to the center of a cell.
+  end: the end of a cell.
+  ```
+
+- items means cells, while content does the whole of grid.
+  - jusitfy(align)-items moves grid elements inside cells.
+  - justify(align)-content moves the whole of grid.
+
+```
+  Shortcut
+  place-items: y(align) x(justify);
+  place-content: y(align) x(justify);
+  place-self: y(align) x(justify);
+```
+
+##### auto columns and rows
+
+##### minmax
+
+##### auto-fit & auto-fill
+
+##### min-content & max-content
+
+##### grid garden game
