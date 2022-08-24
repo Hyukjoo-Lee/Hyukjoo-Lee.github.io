@@ -142,8 +142,8 @@ grid-template-columns: repeat(4, 1fr); : takes as much as spaces available in th
   ```
 
 - items means cells, while content does the whole of grid.
-  - jusitfy(align)-items moves grid elements inside cells.
-  - justify(align)-content moves the whole of grid.
+  - jusitfy(align)-items: moves grid elements inside cells.
+  - justify(align)-content: moves the whole of grid.
 
 ```
   Shortcut
@@ -154,10 +154,32 @@ grid-template-columns: repeat(4, 1fr); : takes as much as spaces available in th
 
 ##### auto columns and rows
 
+- grid-auto-flow: determine how the cell are located.
+- if there are more rows than you set on grid template, remains will locate below without height.
+- You may need grid-auto-rows: when you specify the size of row, remains will locate below with the height you set.
+- if flow is columns, it plays a role in same as flex-direction, which means remains will locate on the right side, not below.
+
 ##### minmax
+
+- you can define minimum & maximum size when the display of browser is shrinked or expanded.
+- e.g. grid-template-columns: repeat(5, minmax(100px, 1fr));
 
 ##### auto-fit & auto-fill
 
+- they are good values for the responsive design with only repeat function.
+
+  1. auto-fill: it fills empty spaces with the new empty cells. (size is fixed, cells are growing)
+  2. auto-fit: it fills empty spaces with existing elements.(growing elements' size depending on browser size)
+
+- e.g.
+  ```css
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  ```
+
 ##### min-content & max-content
 
-##### grid garden game
+- it designs how contents look like.
+- max-content: content의 크기만큼 cell의 크기를 늘림.
+- min-content: content의 크기를 최대한 줄여 cell의 크기를 줄임.
+- collaborates with repeat() and minmax.
