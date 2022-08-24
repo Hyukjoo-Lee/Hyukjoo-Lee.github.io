@@ -5,135 +5,146 @@ tags: [CSS, Grid, Display, Responsive design]
 description: "CSS Concepts Reviews"
 ---
 
-**Grid**
+**CSS Grid**
 
-#### Why we need css grid?
+#### Why do we need CSS grid?
 
 - CSS grid is the 2-D layout system for webpage design.
 - This system helps to design the complex layout.
-- Flexbox makes it easy to put elements on left & right side & center.
-- But, there is a limit to make a grid format.
-- Similiar with the flexbox, you should talk to mostly with a parent, not with a child.
+- Flexbox makes it easy to put elements on the left & right side & center. However, there is a limit to making a grid format.
+- Similar to the flexbox, you should talk mostly with a parent, not with a child.
 
 #### rows and columns
 
 - grid-template-rows: tracks the size of rows.
 - grid-template-columns: tracks the size of columns.
-- gap: shortcut for rows&columns.
-- To give the same size to height&width for rows OR columns, you can utilize repeat() function.
+- gap: shortcut for multiple rows & columns.
+- To give the same size to height & width for rows OR columns, you can utilize repeat() function.
 - e.g. grid-template-columns: repeat(4, 200px)
 
 #### grid template areas
 
-- grid-template-areas is a property to organize the grid structure.
-- You can organize the structure by defining what you are using for each elements.
+- grid-template-areas is property to organize the grid structure.
+- You can organize the structure by defining what elements will be used for.
 - e.g.
 
 ```css
- .grid {
+.grid {
   display: grid;
-  < auto: use all areas >
+  /*  auto: use all areas  */
   grid-template-columns: auto 200px;
   grid-template-rows: 100px repeat(2, 200px) 100px;
   grid-template-areas:
+    /* define what each element will be used for */
     "header header header header"
-    < .: allowing the empty spaces >
+    /* .: allowing the empty space */
     "content content . nav"
     "content content . nav"
     "footer footer footer footer";
-  }
+}
 
-  .header {
+.header {
   background-color: aquamarine;
   grid-area: header;
-  }
+}
 ```
 
-##### rows and columns
+#### rows and columns
 
-- There is an another way to make the structure.
-- You can give values; grid-column-start, grid-column-end, grid-row-start, grid-row-end property to each elements.
+- There is another way to make the structure.
+- You can give values to each elements like...
+
+```
+grid-column-start: {value}
+grid-column-end: {value}
+grid-row-start: {value}
+grid-row-end: {value}
+```
+
 - grid-column-start, grid-row-start: starting with a value upper than 1.
 - grid-column-end, grid-row-end: ending with a value upper than 2.
 
-```css
+```CSS
     /* shortcuts */
-    grid-column: 1 / 4
+    grid-row: 1 / 4
     grid-column: 1 / -1;
   /* You can also count from the end of elements (-1,-2). */
-
-
 ```
 
-- span: show how much spaces are allocated.
-- e.g.
+- span: show how many spaces are allocated.
 
-```css
-grid-row: span 2; // 2 rows
-grid-columns: span 2; // 2 columns
+```CSS
+    /* 2 rows & 2 columns */
+    grid-row: span 2;
+    grid-column: span 2;
 ```
 
-- Notice that it does not express the start & end point so that you should consider the relationship betweeen other elements.
+- Notice that it does not express the start & end point, so you should consider the relationship between other elements.
 - e.g.
 
-```css
-  .nav {
+```CSS
+.nav {
   grid-row: 1 / 3;
-  }
+}
 
-  .content {
-  Since there is no starting point for content, content does not show.
+.content {
+
+  /* Since there is no starting point for content, this content does not show. */
   grid-row: span 2;
-  /* You should define start point foor content
+  /* You should define the start point for content like..
+
   grid-row: 2 / span 2;
   OR
   span for nav tag */
-  }
+
+}
 ```
 
-##### line naming
+#### line naming
 
-- You can give name for lines.
+- You can give a name for lines.
 
-```css
-  grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px [fifth-line]
+```CSS
+  grid-template-columns:
+  [first-line] 100px [second-line] 100px
+  [third-line] 100px [fourth-line] 100px [fifth-line]
   grid-template-rows: repeat(4, [my-line] 100px );
   grid-column: first-line / fourth-line;
   grid-row: my-line 2 / my-line 4;
 ```
 
-##### grid template
+#### grid template
 
-- 1fr: fraction means taking as much as spaces available in the 'container' (more elastic than pixel).
+- 1fr: fraction means taking as many as spaces available in the 'container'. (more elastic than pixel).
 
+```CSS
+grid-template-columns: repeat(4, 1fr);
+/* takes as many as spaces available in the container, and repeats four times. */
 ```
-grid-template-columns: repeat(4, 1fr); : takes as much as spaces available in the container, and repeat four times.
-```
 
-=> For responsive design, you'd better to use 1fr or % than px.
+- For responsive design, you'd better use 1fr or % than px.
+- You need to set height when you are using fractions; note that the grid does not have any height.
+- height: 50vh (half-size of the screen)
+- grid-template: shortcut of grid-template-areas, grid-template-columns, grid-template-rows.
 
-- You need to set height when you are using fraction; note that grid does not have any height.
-- height: 50vh (half size of the screen)
-
-- grid-template: shortcut of grid-template-areas, grid-template-columns, grid-template-rows
-  e.g.
+```CSS
   gird-template:
   "header header header header" 1fr
   "content content content nav" 2fr
   "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr; (row size / column size)
 
-  +naming
+  /* + naming */
   gird-template:
   [header-start] "header header header header" 1fr [header-end]
   [content-start] "content content content nav" 2fr [conent-end]
   [footer-start] "footer footer footer footer" 1fr [footer-end] / 1fr 1fr 1fr 1fr;
+```
 
-##### place items
+#### place items
 
-- Inside a grid-container,
-- Inside a grid-container, justify-items, align-items default is stretch for children.
+- Inside a grid container, justify-items, align-items default is 'stretch' for children.
 
-- justify-items = horizontal, align-items = vertical.
+- justify-items = horizontal, align-items &rarr; vertical.
 
   ```
   start: place items to the start point of a cell.
@@ -141,9 +152,9 @@ grid-template-columns: repeat(4, 1fr); : takes as much as spaces available in th
   end: the end of a cell.
   ```
 
-- items means cells, while content does the whole of grid.
-  - jusitfy(align)-items: moves grid elements inside cells.
-  - justify(align)-content: moves the whole of grid.
+- items mean cells, while content does the whole grid.
+  - justify(align)-items: moves grid elements inside cells.
+  - justify(align)-content: moves the whole grid.
 
 ```
   Shortcut
@@ -152,34 +163,35 @@ grid-template-columns: repeat(4, 1fr); : takes as much as spaces available in th
   place-self: y(align) x(justify);
 ```
 
-##### auto columns and rows
+#### auto columns and rows
 
 - grid-auto-flow: determine how the cell are located.
-- if there are more rows than you set on grid template, remains will locate below without height.
-- You may need grid-auto-rows: when you specify the size of row, remains will locate below with the height you set.
-- if flow is columns, it plays a role in same as flex-direction, which means remains will locate on the right side, not below.
+- if there are more rows than you set on the grid template, the remains will locate below without height.
+- You may need grid-auto-rows: when you specify the size of the row, remains will locate below with the height you set.
+- if the flow is columns, it plays a role in the same as flex-direction, which means remains will locate on the right side, not below.
 
-##### minmax
+#### minmax
 
-- you can define minimum & maximum size when the display of browser is shrinked or expanded.
+- you can define minimum & maximum size when the display of browser is shrunk or expanded.
 - e.g. grid-template-columns: repeat(5, minmax(100px, 1fr));
 
-##### auto-fit & auto-fill
+#### auto-fit & auto-fill
 
 - they are good values for the responsive design with only repeat function.
 
-  1. auto-fill: it fills empty spaces with the new empty cells. (size is fixed, cells are growing)
-  2. auto-fit: it fills empty spaces with existing elements.(growing elements' size depending on browser size)
+1. auto-fill: it fills empty spaces with new empty cells. (size is fixed, cells are growing)
+2. auto-fit: it fills empty spaces with existing elements.(growing elements' size depending on browser size)
 
-- e.g.
-  ```css
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  ```
+```CSS
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+```
 
 ##### min-content & max-content
 
 - it designs how contents look like.
-- max-content: content의 크기만큼 cell의 크기를 늘림.
-- min-content: content의 크기를 최대한 줄여 cell의 크기를 줄임.
+- max-content: maximum width or height of the content.
+  (it might cause the overflow.)
+- min-content: minimum width of the content.
+  (the content might be as small as the longest word.)
 - collaborates with repeat() and minmax.
