@@ -5,9 +5,6 @@ tags: [Algorithm, binary search, java]
 description: "Binary Search"
 ---
 
-### Time Complexity
-
-
 ### What is the binary search?
 
 - Binary search is an algorithm that searches a target within a sorted array. 
