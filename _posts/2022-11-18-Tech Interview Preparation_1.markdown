@@ -62,42 +62,10 @@ for(int i = 0; i < nums.length; i++) {
 
 ```
 
-- Binary Search approach
-  Time complexity is O(logN)
-  Space complexity is O(1) - 로컬 변수만 사용, 루프 안에 따로 array 등이 선언되지 않았다.
+#### Binary Search approach
 
-```java
-class Solution {
-    public int search(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
-        int mid = 0;
-
-        while(left <= right) {
-            mid = (left + right) / 2;
-            if(nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] < target) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-
-        return -1;
-    }
-}
-```
-
-### Two Pointer approach
-
-- 한 포인터는 배열의 시작 값을 가리키고 다른 포인터는 끝 값을 가리키면서 시작
-- 모든 단계에서 두 포인터의 합이 일치하는지 확인
-- 맞다면 해당 인덱스를 리턴함
-- 만약 아니라면, 두 가지 중 하나를 수행
-
-1. 만약 두 포인터가 가리키는 두 숫자의 합이 타켓 값보다 크면, 더 작은 합을 가진 쌍이 필요하기 때문에, 끝 값을 가리키는 포인터를 줄인다.
-2. 만약 두 포인터가 가리키는 두 숫자의 합이 타멧 값보다 작으면, 더 큰 합을 가진 쌍이 필요하기 때문에, 시작 값을 가리키는 포인터를 늘린다.
+- Time complexity is O(logN)
+- Space complexity is O(1) - 로컬 변수만 사용, 루프 안에 따로 array 등이 선언되지 않았다.
 
 ```java
 public class BinarySearch {
@@ -139,7 +107,17 @@ public class BinarySearch {
 
 ```
 
-### Same Strategy but would be a better way
+#### Two Pointer approach
+
+Problem: Given an array of sorted numbers and a target sum, find a pair in the array whose sum is equal to the given target.
+
+- 한 포인터는 배열의 시작 값을 가리키고 다른 포인터는 끝 값을 가리키면서 시작
+- 모든 단계에서 두 포인터의 합이 일치하는지 확인
+- 맞다면 해당 인덱스를 리턴함
+- 만약 아니라면, 두 가지 중 하나를 수행
+
+1. 만약 두 포인터가 가리키는 두 숫자의 합이 타켓 값보다 크면, 더 작은 합을 가진 쌍이 필요하기 때문에, 끝 값을 가리키는 포인터를 줄인다.
+2. 만약 두 포인터가 가리키는 두 숫자의 합이 타멧 값보다 작으면, 더 큰 합을 가진 쌍이 필요하기 때문에, 시작 값을 가리키는 포인터를 늘린다.
 
 ```java
 class Solution {
