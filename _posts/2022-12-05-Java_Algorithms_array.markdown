@@ -1,6 +1,6 @@
 ---
 title: "{ Java Algorithms } Array"
-date: 2022-11-19 23:00:00 +07:00
+date: 2022-12-05 23:00:00 +07:00
 tags: [Algorithm, Array, Quick sort, Coding Interview, java]
 ---
 
@@ -143,52 +143,52 @@ int[] answer = new int[2];
 2. 왼쪽의 모든 항목이 더 작고
 3. 오른쪽의 모든 항목이 더 크다
 
-- Array = [2, 6, 5, 3, 8, 7, 1, 0]
+Array = [2, 6, 5, 3, 8, 7, 1, 0]
 
-  1. 3 을 Pivot 으로 잡고 배열의 끝으로 이동하여 Pivot 을 제거
-     [2, 6, 5, 0, 8, 7, 1, 3]
-  2. (itemFromLeft) Pivot 보다 큰 왼쪽에서 시작 하는 첫 번째 요소 (6)
-  3. (itemFromRight) Pivot 보다 작은 오른쪽에 위치하는 요소 (1)
+1. 3 을 Pivot 으로 잡고 배열의 끝으로 이동하여 Pivot 을 제거
+   [2, 6, 5, 0, 8, 7, 1, 3]
+2. (itemFromLeft) Pivot 보다 큰 왼쪽에서 시작 하는 첫 번째 요소 (6)
+3. (itemFromRight) Pivot 보다 작은 오른쪽에 위치하는 요소 (1)
+4. Swap itemFromLeft with itemFromRight
+   [2, '1', 5, 0, 8, 7, '6', 3]
+5. 반복
+   (itemFromLeft) = 5
+   (itemFromRight) = 0
+   [2, 1, '0', '5', 8, 7, 6, 3]
+6. 종료 조건
+   itemFromLeft 인덱스가 종 itemFromRight 인덱스 보다 큼
+   (itemFromLeft) = 5 (index is '4')
+   (itemFromRight) = 0 (index is '3')
+7. Swap itemFromLeft with Pivot
+   [2, 1, 0, '3', 8, 7, 6, '5']
+8. Pivot 의 3 가지 조건 확인
+
+- 최종 정렬된 배열의 correct position 에 있다 (v)
+- 왼쪽의 모든 항목이 더 작고 (v)
+- 오른쪽의 모든 항목이 더 크다 (v)
+
+9. Recursive
+
+- 더 큰 파티션으로 퀵 정렬 다시 수행
+  => [8, 7, 6, 5]
+
+  1. 7 을 Pivot 으로 잡고 배열의 끝으로 이동하여 Pivot 을 제거
+     [8, '5', 6, '7']
+  2. (itemFromLeft) Pivot 보다 큰 왼쪽에서 시작 하는 첫 번째 요소 (8)
+  3. (itemFromRight) Pivot 보다 작은 오른쪽에 위치하는 요소 (6)
   4. Swap itemFromLeft with itemFromRight
-     [2, '1', 5, 0, 8, 7, '6', 3]
+     ['6', 5, '8', 7]
   5. 반복
-     (itemFromLeft) = 5
-     (itemFromRight) = 0
-     [2, 1, '0', '5', 8, 7, 6, 3]
   6. 종료 조건
      itemFromLeft 인덱스가 종 itemFromRight 인덱스 보다 큼
-     (itemFromLeft) = 5 (index is '4')
-     (itemFromRight) = 0 (index is '3')
+     (itemFromLeft) = 8 (index is '2')
+     (itemFromRight) = 5 (index is '1')
   7. Swap itemFromLeft with Pivot
-     [2, 1, 0, '3', 8, 7, 6, '5']
+     [6, 5, '7', '8']
   8. Pivot 의 3 가지 조건 확인
-
-  - 최종 정렬된 배열의 correct position 에 있다 (v)
-  - 왼쪽의 모든 항목이 더 작고 (v)
-  - 오른쪽의 모든 항목이 더 크다 (v)
-
-  9. Recursive
-
-  - 더 큰 파티션으로 퀵 정렬 다시 수행
-    => [8, 7, 6, 5]
-
-    1. 7 을 Pivot 으로 잡고 배열의 끝으로 이동하여 Pivot 을 제거
-       [8, '5', 6, '7']
-    2. (itemFromLeft) Pivot 보다 큰 왼쪽에서 시작 하는 첫 번째 요소 (8)
-    3. (itemFromRight) Pivot 보다 작은 오른쪽에 위치하는 요소 (6)
-    4. Swap itemFromLeft with itemFromRight
-       ['6', 5, '8', 7]
-    5. 반복
-    6. 종료 조건
-       itemFromLeft 인덱스가 종 itemFromRight 인덱스 보다 큼
-       (itemFromLeft) = 8 (index is '2')
-       (itemFromRight) = 5 (index is '1')
-    7. Swap itemFromLeft with Pivot
-       [6, 5, '7', '8']
-    8. Pivot 의 3 가지 조건 확인
-       - 최종 정렬된 배열의 correct position 에 있다 (v)
-       - 왼쪽의 모든 항목이 더 작고 (v)
-       - 오른쪽의 모든 항목이 더 크다 (v)
+     - 최종 정렬된 배열의 correct position 에 있다 (v)
+     - 왼쪽의 모든 항목이 더 작고 (v)
+     - 오른쪽의 모든 항목이 더 크다 (v)
 
 ##### Now, you can understand the concept => Do recurtion to handle the rest of it.
 
@@ -228,4 +228,58 @@ class QuickSort {
 		if(arr[front]>arr[mid]) swap(arr, front, mid);
 	}
 }
+```
+
+#### Exercise 4
+
+- Array of Products of All Elements Except Itself
+
+```java
+int[] findProduct(int[] arr)
+
+// input
+arr = {1,2,3,4}
+
+// output
+arr = {24,12,8,6}
+
+
+    // prefix = 해당 인덱스에서 왼쪽에 있는 모든 요소의 곱을 포함
+
+    // suffix = 해당 인덱스에서 오른쪽에 있는 모든 요소의 곱을 포함
+
+    // result = prefix * suffix = 왼쪽에 있는 모든 요소의 곱 * 오른쪽에 있는 모든 요소의 곱
+    // 즉, 자신을 제외한 모든 요소의 곱
+    // 처음 인덱스 0 에 있는 값은 1로 초기화
+
+    //    [1,   2,   3,   4,   5,   6]
+    //pre  1,   1,   2,   6,   24, 120
+    //suf  720, 360, 120,  30,  6,  1
+    //res  720  360  240  180  144 120
+    int length = arr.length;
+    int[] left = new int[length];
+    int[] right = new int[length];
+
+    int[] result = new int[length];
+
+    // prefix
+    left[0] = 1;
+
+    for(int i = 1; i < length; i++) {
+      left[i] = left[i-1] * arr[i-1];
+    }
+
+    // suffix
+    right[length -1] = 1;
+    for(int i = length - 2; i >= 0; i--) {
+      right[i] = right[i+1] * arr[i+1];
+    }
+
+    for(int i = 0; i < length; i++) {
+      result[i] = right[i] * left[i];
+    }
+
+    return result;
+
+
 ```
