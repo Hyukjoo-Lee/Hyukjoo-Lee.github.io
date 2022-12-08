@@ -140,10 +140,15 @@ data = 3
 linkedlist = 0->1->2->3
 
 // explaination - loop 을 사용하여 목록의 끝에 도달 후 새 노드를 마지막 노드의 다음 노드로 설정
+
+        // Create a new node
         Node newNode = new Node();
+        // Put the data
         newNode.data = data;
+        // Set nextNode as null
         newNode.nextNode = null;
 
+        // Note that we insert a data at the end of nodes
         Node last = headNode;
 
         // iterate to the last element
@@ -154,7 +159,92 @@ linkedlist = 0->1->2->3
         // set newNode the next element of the last node
         last.nextNode = newNode;
         size++;
-
     }
 }
+```
+
+### Exercise 2
+
+- Search in Singly Linked List
+
+```java
+// Searching for an element in a linked list
+
+// head node 부터 시작해서 list 의 끝까지 search 를 진행
+
+boolean searchNode(T data)
+
+// Input
+linkedlist = 5->90->10->4   and  value = 4
+
+// Output
+true
+
+Node currentNode = this.headNode;
+
+// Traverse through the list checking if the currentNode's data equals to data
+while(currentNode != null) {
+  if(currentNode.data.equals(data)) {
+    return true;
+  }
+  currentNode = currentNode.nextNode;
+}
+
+return false;
+```
+
+### Exercise 3
+
+- Deletion in Singly Linked List(Delete by Value)
+
+```java
+
+// Delete by value
+
+void deleteByValue(T data)
+
+
+// Input
+linkedlist = 3 -> 2 -> 1 -> 0,
+data = 1
+
+// Output
+linkedlist = 3 -> 2 -> 0
+
+
+public void deleteByValue(T data) {
+
+  if(isEmpry()) {
+    return;
+  }
+
+  Node currentNode = this.headNode;
+  Node previousNode = null;
+
+  if(currentNode.data.equals(data)) {
+    deleteAtHead();
+    return;
+  }
+
+// Traverse the list searching for the value
+  while(currentNode != null) {
+    if(data.equals(currentNode.data)) {
+// Once it is detected, it connects n's previous node to the nextNode of n
+      previousNode.nextNode = currentNode.nextNode;
+      size--;
+      return;
+    }
+
+// Remove n from the list
+    previousNode = currentNode;
+    currentNode = currentNode.nextNode;
+  }
+
+
+
+}
+
+
+
+
 ```
