@@ -1,6 +1,6 @@
 ---
 title: "{ Java Algorithms } Linked List"
-date: 2022-11-20 14:00:00 +07:00
+date: 2022-12-06 14:00:00 +07:00
 tags: [Algorithm, Linked List, Coding Interview, java]
 ---
 
@@ -64,8 +64,9 @@ tags: [Algorithm, Linked List, Coding Interview, java]
 - Note: Even when a linked list is empty, the head Node must always exist.
 
 ```java
-
+    // Node object has data
     public T data;
+    // And reference of nextNode
     public Node nextNode;
 
     public Node headNode; // head node of the linked list
@@ -103,14 +104,71 @@ tags: [Algorithm, Linked List, Coding Interview, java]
     headNode = null;
     size = 0;
 
+    // insert at head
     public void insertAtHead(T data) {
-        // Create a new node and assign the data value
-        Node newNode = new Node();
-        newNode.data = data;
-        newNode.nextNode = headNode;
-        headNode = newNode;
-        size++;
+
+      if(isEmpty()) {
+        insertAtHead(data);
+        return;
+      }
+
+      // insert data at head
+      Node newNode = new Node();
+      newNode.data = data;
+
+      // 기존 head 를 newNode 의 nextNode 로 linking
+      newNode.nextNode = headNode;
+
+      // head 노드는 new node 로 replace 됨
+      headNode = newNode;
+      size++;
     }
+
+    public void insertAtEnd(T data) {
+
+    if(isEmpty()) {
+        insertAtHead(data);
+        return;
+      }
+
+      Node newNode = new Node();
+      newNode.data = data;
+      newNode.nextNode = null;
+
+      // we can use a loop to reach the tail of the list and set our new node as the nextNode of the last node.
+
+      // 리스트의 끝에 새로운 노드를 연결 시키기 위하여 loop 을 사용하여 last node 를 찾은 후 새로운 노드를 연결시킴
+
+      // initialize the last node
+      Node last = headNode;
+
+      while(last.nextNode != null) {
+        last = last.nextNode;
+      }
+
+      last.nextNode = newNode;
+      size++;
+    }
+
+    public void insertAfter (Node prevNode, T data) {
+      if(isEmpty()) {
+        insertAtHead(data);
+        return;
+      }
+
+      Node newNode = new Node();
+      newNode.data = data;
+
+      if(prevNode == null) {
+        System.out.println("The given previous node cannot be null.");
+      }
+
+      // 기존에 위치한 노드의 다음 노드는 새로운 노드의 다음 노드가 되고
+      newNode.nextNode = prevNode.nextNode;
+      // 새로운 노드는 전의 노드의 다음 element 가 된다
+      prevNode.nextNode = newNode;
+    }
+
 
 ```
 
@@ -180,17 +238,20 @@ linkedlist = 5->90->10->4   and  value = 4
 // Output
 true
 
-Node currentNode = this.headNode;
+    // code
+    if(isEmpty()) return false;
 
-// Traverse through the list checking if the currentNode's data equals to data
-while(currentNode != null) {
-  if(currentNode.data.equals(data)) {
-    return true;
-  }
-  currentNode = currentNode.nextNode;
-}
+        Node last = headNode;
 
-return false;
+        while(last.nextNode != null) {
+            if(last.data == data) {
+                return true;
+            } else {
+                last = last.nextNode;
+            }
+        }
+        return false; //value not found
+    }
 ```
 
 ### Exercise 3
@@ -211,40 +272,50 @@ data = 1
 // Output
 linkedlist = 3 -> 2 -> 0
 
-
 public void deleteByValue(T data) {
+        // if empty then simply return
+        if(isEmpty()) return;
 
-  if(isEmpry()) {
-    return;
-  }
+        // Start from head node
+        Node currentNode = headNode;
+        Node previousNode = null;
 
-  Node currentNode = this.headNode;
-  Node previousNode = null;
+        // Data is at head so delete from head
+        if(currentNode.data.equals(data)) {
+            deleteAtHead();
+            return;
+        }
 
-  if(currentNode.data.equals(data)) {
-    deleteAtHead();
-    return;
-  }
+        // Traverse the list searching for the data to delete
+        while(currentNode != null) {
+            //node to delete is found
+            if(currentNode.data == data) {
+              // links the prevNode to the nextNode
+              previousNode.nextNode = currentNode.nextNode;
+              size--;
+              return;
+            }
 
-// Traverse the list searching for the value
-  while(currentNode != null) {
-    if(data.equals(currentNode.data)) {
-// Once it is detected, it connects n's previous node to the nextNode of n
-      previousNode.nextNode = currentNode.nextNode;
-      size--;
-      return;
+            previousNode = currentNode;
+            currentNode = currentNode.nextNode;
+        }
+        }
     }
-
-// Remove n from the list
-    previousNode = currentNode;
-    currentNode = currentNode.nextNode;
-  }
-
-
-
 }
 
-
-
-
 ```
+
+### Linked Lists vs Arrays
+
+#### Memory Allocation
+
+- 어떻게 그들이 저장이 되는지에 차이점이 있음
+- 어레이는 전체 블록의 메모리를 initialize 한다 (어떠한 elements 가 없더라고 하더라도, 지정된 elements 들을 처음 부터 저장)
+- 반면에 linked list 는 사용하는 메모리 portion 만 initialize
+
+#### Insertion and Deletion
+
+- In a linked list, insertion / deletion at head or tail takes constant of time O(1)
+- While, an array takes O(n) time; must shift the array elements left or right after the operation
+
+#### Searching
