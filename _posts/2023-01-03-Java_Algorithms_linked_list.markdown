@@ -367,3 +367,69 @@ public void deleteByValue(T data) {
     }
 
 ```
+
+### Exercise 4
+
+- Find the Length of a Linked List
+
+```java
+
+int length()
+
+// Input
+linkedlist = 0->1->2-3
+
+// Output
+length = 4
+
+int count = 0;
+Node currentNode = headNode;
+
+  while(currentNode != null) {
+    count++;
+    currentNode = currentNode.nextNode;
+  }
+
+return count;
+```
+
+### Exercise 5
+
+- Find the Middle Node of a Linked List
+
+```java
+
+void deleteByValue(T data)
+
+public static <T> Object findMiddle(SinglyLinkedList<T> list)
+
+// Input
+linkedlist = 2->10->7->21
+
+// Output
+middle = 10
+
+
+// Hint: 한 걸음 갈때, 두 걸음 앞서가면 항상 반밖에 도달하지 못한다는 것을 활용
+current = current.nextNode.nextNode
+middle = middle.nextNode
+
+SinglyLinkedList.Node middle = list.headNode;
+SinglyLinkedList.Node current = list.headNode;
+
+  if(list.isEmpty()) {
+  return null;
+  }
+
+
+  while(current != null && current.nextNode != null) {
+    current = current.nextNode.nextNode;
+    if(current != null) {
+      middle = middle.nextNode;
+    }
+  }
+
+return middle.data;
+
+
+```
