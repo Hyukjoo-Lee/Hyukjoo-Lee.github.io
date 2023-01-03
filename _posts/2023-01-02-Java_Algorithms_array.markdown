@@ -1,6 +1,6 @@
 ---
 title: "{ Java Algorithms } Array"
-date: 2022-12-05 23:00:00 +07:00
+date: 2022-01-02 23:00:00 +07:00
 tags: [Algorithm, Array, Quick sort, Coding Interview, java]
 ---
 
@@ -282,4 +282,100 @@ arr = {24,12,8,6}
     return result;
 
 
+```
+
+#### Exercise 5
+
+- Find Minimum Value in Array
+
+```java
+
+int findMinimum(int[] arr)
+
+// input
+arr = {9, 2, 3, 6}
+
+// output
+result = 2
+
+int result = 0;
+int previousIdx = 0;
+
+    // 만약 전의 값이 현재 인덱스에 있는 값보다 크면 현재 인덱스에 있는 값이 리턴되야 한다
+    // 다음 값이 더 작을 수 있다라는 것을 고려해 봤을때?
+    // 전의 인덱스를 현재 인덱스로 계속 업데이트 하면서 비교
+    for(int i = 1; i < arr.length; i++) {
+      if(arr[previousIdx] > arr[i]) {
+        previousIdx =  i;
+      }
+      result = arr[previousIdx];
+    }
+    return result;
+
+```
+
+#### Exercise 5
+
+- First Non-Repeating Integer in an Array
+
+```java
+
+int findFirstUnique(int[] arr)
+
+// input
+arr = {1, 2, 3, 2, 6, 6}
+
+// output
+result = 1
+
+boolean isRepeat = false;
+
+  for (int i = 0; i < arr.length; i++) {
+    for(int j = 1; i < arr.length; j++) {
+      if(arr[i] == arr[j] && i != j) {
+        isRepeat = true;
+        break;
+      }
+    }
+
+    if(isRepeat == false) {
+      return arr[i];
+    } else {
+      isRepeat = false;
+    }
+}
+
+return -1;
+```
+
+### Exercise 6
+
+- Find Second Maximum Value in an Array
+
+```java
+
+int findSecondMaximum(int[] arr)
+
+// input
+arr = {4, 2, 1, 5, 0}
+
+// output
+result = 4
+
+int maximum = 0;
+int secMaximum = 0;
+
+  for(int i = 0; i < arr.length; i++) {
+    if(arr[i] > maximum) {
+      maximum = arr[i];
+    }
+  }
+
+  for(int i = 0; i < arr.length; i++) {
+    if(arr[i] > secMaximum && arr[i] < maximum) {
+      secMaximum = arr[i];
+    }
+  }
+
+  return secMaximum;
 ```

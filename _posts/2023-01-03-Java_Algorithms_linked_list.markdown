@@ -1,12 +1,12 @@
 ---
 title: "{ Java Algorithms } Linked List"
-date: 2022-12-06 14:00:00 +07:00
+date: 2022-01-03 14:00:00 +07:00
 tags: [Algorithm, Linked List, Coding Interview, java]
 ---
 
 ### Linked List
 
-- A linear data structure consising of nodes where each node contains data and a pointer to the next node in the list
+- A linear data structure consists of nodes where each node contains data and a pointer to the next node in the list
 - Singly Linked List
 - Doubly Linked List
 
@@ -14,10 +14,10 @@ tags: [Algorithm, Linked List, Coding Interview, java]
 
 - 어떤 '순서' 가 있는 데이터의 집합 (1등부터 차례차례 들어온 경마들의 기록)
 - Array List
-  1. '연속적인' 공간에 순차적으로 데이터를 저장
-  2. Indexing 가능
+  - '연속적인' 공간에 순차적으로 데이터를 저장
+  - Indexing 가능
 - Linked List
-  1. '비연속적인' 공간에 순서대로 데이터를 저장
+  - '비연속적인' 공간에 순서대로 데이터를 저장
 
 ## Singly Linked List
 
@@ -27,13 +27,13 @@ tags: [Algorithm, Linked List, Coding Interview, java]
 ### Pros
 
 - Insertion and deletion at head is more efficient than array
-- 추가, 삭제가 쉬움 <--> Array List
-  e.g. 1 -> 4 -> 5 -> 11 -> 22 -> 7 인 linked list 에서 5와 11 번 사이에 9를 추가 하려면 5의 포인터가 9를 가리키게 하며, 9의 포인터가 11번을 가리키게 하면 된다.
+- 추가 & 삭제가 쉬움 &larr; &rarr; Array List
+  - 1 &rarr; 4 &rarr; 5 &rarr; 11 &rarr; 22 &rarr; 7 인 linked list 에서 5와 11 번 사이에 9를 추가 하려면 5의 포인터가 9를 가리키게 하며, 9의 포인터가 11번을 가리키게 하면 된다.
 - 반면 어레이는 하나씩 뒤로 옮겨줘야 함
 
 ### Cons
 
-- 위치 탐색이 오래 걸린다 (from the head to the position) = Indexing 응 통해서 해당 노드에 바로 접근 불가능
+- 위치 탐색이 오래 걸린다 (from the head to the position) = Indexing 을 통해서 해당 노드에 바로 접근 불가능
 - Array List 에 비하여 메모리를 더 차지함 (포인터를 저장할 공간이 따로 요구되기 때문에)
 - Reverse traversing is not possible with singly linked list
 
@@ -44,8 +44,8 @@ tags: [Algorithm, Linked List, Coding Interview, java]
 
 ### Pros
 
-- head as well as tail are O(1) operations
-- can be traversed forward as well as backward
+- Head as well as tail are O(1) operations
+- Can be traversed forward as well as backward
 
 ### Cons
 
@@ -59,8 +59,7 @@ tags: [Algorithm, Linked List, Coding Interview, java]
 - deleteAtHead()
 - deleteAtEnd()
 - Search(data)
-- isEmpty() is a helper function which will prove useful in defining all the other functions
-
+- isEmpty() is a helper function which will prove useful in defining all the other functions.
 - Note: Even when a linked list is empty, the head Node must always exist.
 
 ```java
@@ -305,13 +304,14 @@ public void deleteByValue(T data) {
 
 ```
 
-### Linked Lists vs Arrays
+### Singly Linked Lists vs Arrays
 
 #### Memory Allocation
 
 - 어떻게 그들이 저장이 되는지에 차이점이 있음
 - 어레이는 전체 블록의 메모리를 initialize 한다 (어떠한 elements 가 없더라고 하더라도, 지정된 elements 들을 처음 부터 저장)
 - 반면에 linked list 는 사용하는 메모리 portion 만 initialize
+- 즉, 어레이는 초기에 크기를 define 해줘야 하고, linkedlist 는 define 를 요구하지 않음
 
 #### Insertion and Deletion
 
@@ -319,3 +319,51 @@ public void deleteByValue(T data) {
 - While, an array takes O(n) time; must shift the array elements left or right after the operation
 
 #### Searching
+
+- In a linked list, you must iterate the list from the head to tail searching the correct value O(n)
+- While, an array take O(1) using the index
+
+### Doubly Linked Lists
+
+- Bi-directional advantages
+
+```java
+  public class Node<T> {
+    public T data;
+    public Node nextNode; // To store pointer to next element
+    public Node prevNode; // To store pointer to prev element
+  }
+
+  // delete
+```
+
+```java
+// Delete by value
+
+        // If empty then simply return
+        if (isEmpty())
+            return;
+
+        // Start from head node
+        Node currentNode = this.headNode;
+
+        if (currentNode.data.equals(data)) {
+            // Data is at head so delete from head
+            deleteAtHead();
+            return;
+        }
+
+        // Traverse the list searching for the data to delete
+        while (currentNode != null) {
+            // Node to delete is found
+            if (data.equals(currentNode.data)) {
+                currentNode.prevNode.nextNode = currentNode.nextNode;
+                if(currentNode.nextNode != null)
+                    currentNode.nextNode.prevNode = currentNode.prevNode;
+                    size--;
+            }
+            currentNode = currentNode.nextNode;
+        }
+    }
+
+```
