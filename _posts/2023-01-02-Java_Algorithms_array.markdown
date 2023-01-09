@@ -1,6 +1,6 @@
 ---
 title: "{ Java Algorithms } Array"
-date: 2022-01-02 23:00:00 +07:00
+date: 2023-01-02 23:00:00 +07:00
 tags: [Algorithm, Array, Quick sort, Coding Interview, java]
 ---
 
