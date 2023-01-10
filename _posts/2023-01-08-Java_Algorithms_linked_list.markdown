@@ -793,14 +793,12 @@ Node currentNode = list.headNode;
 while(currentNode != null) {
     currentNode = currentNode.nextNode;
 }
+
 ```
 
 - Circular linked list = The last node in the linked list points to the first element
-
 - Application of linked-list
-
   - Used to implement file systems
   - Used to implement hash tables
   - Used to implement adjacency lists
-
 - The nodes of a linked list are not stored at consecutive locations in memory like the elements of an array. Instead, the nodes are linked together by the next pointers, with the last node having a next pointer that points to null

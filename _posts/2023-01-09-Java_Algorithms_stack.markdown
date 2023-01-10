@@ -17,7 +17,6 @@ tags: [Algorithm, Stack, Coding Interview, java]
 ### Operations
 
 - 스택(Stack)는 LIFO(Last In First Out) 를 따른다. 즉, 가장 최근에 스택에 추가한 항목이 가장 먼저 제거될 항목이다.
-
 - pop(): 스택에서 가장 위에 있는 항목을 제거한다.
 - push(item): item 하나를 스택의 가장 윗 부분에 추가한다.
 - datatype top(): 스택의 가장 위에 있는 항목을 반환한다.
@@ -372,6 +371,7 @@ public static void sortStack(Stack<Integer> stack) {
   - postfix : operators appear after the operands / 변형방법: 괄호로 묶어서 괄호를 하나씩 지우면서 연산자를 뒤로 보냄
 
 ```java
+
 // input
 expression = "921*-8-4+" //  9 - 2 * 1 - 8 + 4
 
@@ -411,4 +411,5 @@ public static int evaluatePostFix(String expression) {
     // 4. at the end, Stack will contain result of whole expression.
     return stack.pop();
 }
+
 ```
