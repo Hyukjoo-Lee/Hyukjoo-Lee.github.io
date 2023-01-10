@@ -362,16 +362,16 @@ public static void sortStack(Stack<Integer> stack) {
 
 ```
 
+
+
 ### Exercise 5
 
 - Evaluate Postfix Expressions using Stacks
-
 - Infix and Postfix Expressions
   - infix : operators like + and \* appear between the operands
   - postfix : operators appear after the operands / 변형방법: 괄호로 묶어서 괄호를 하나씩 지우면서 연산자를 뒤로 보냄
 
 ```java
-
 // input
 expression = "921*-8-4+" //  9 - 2 * 1 - 8 + 4
 

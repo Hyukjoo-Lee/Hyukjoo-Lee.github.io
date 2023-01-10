@@ -796,6 +796,8 @@ while(currentNode != null) {
 
 ```
 
+
+
 - Circular linked list = The last node in the linked list points to the first element
 - Application of linked-list
   - Used to implement file systems
