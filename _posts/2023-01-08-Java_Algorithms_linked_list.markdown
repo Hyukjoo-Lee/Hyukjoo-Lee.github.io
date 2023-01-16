@@ -784,6 +784,8 @@ class Node<T> {
 }
 ```
 
+
+
 - An array has a fixed size, otherwise a linked list has dynamic size (you need to specify the fixed size during initialization)
 
 - Traverse the list
