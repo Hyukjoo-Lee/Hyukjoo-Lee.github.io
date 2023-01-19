@@ -440,7 +440,7 @@ public static int evaluatePostFix(String expression) {
                 stack.push(b / a);
                 break;
             }
-    // 3. if character is a number push it in stack
+    // 3. if character is a number, push it in stack
         } else stack.push(Character.getNumericValue(character));
     }
     // 4. at the end, Stack will contain result of whole expression.
@@ -455,12 +455,29 @@ public static int evaluatePostFix(String expression) {
 
 ```java 
 /**
- * Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+ * Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',  * determine if the input string is valid.
  * An input string is valid if:
  * Open brackets must be closed by the same type of brackets.
  * Open brackets must be closed in the correct order.
  * Every close bracket has a corresponding open bracket of the same type. 
 */
+
+// 이 문제는 괄호로 이뤄진 문자열이 input 으로 주어지고
+// this question is about checking of the given input is opening and closing properly in order
+
+// if the type of open branket and closing blanket is same, return true, otherwise false is returned
+// 열린 괄호가 순서대로 닫히는지 그리고 닫히는 괄호와 열리는 괄호가 같은 타입인지 체크하고
+// 그렇다면 true, 그렇지 않으면 false 를 리턴하는 문제입니다
+
+// [ {,(,[,],),} ]
+// 이러한 문자열이 주어진다면 문자열을 character array 로 만들고 
+// loop 을 돌려서 배열의 첫번째 요소와 마지막 요소를 각각 순서대로 비교할 수 있는 data structure 를    생각해 봤을 때
+// LIFO - 마지막에 들어온 요소가 첫번째로 나가는 stack 을 생각 해 볼수 있습니다
+
+// { ( [ .. 먼저 열리는 괄호를 stack 에 푸쉬를 하고
+// 다음 character 가 같은 유형의 닫히는 괄호가 나오면 
+// pop 맨 마지막에 들어온 열린 괄호를 없애고 ... 반복하게 되면 stack 에 들어온 열린 괄호들은 다 없어질 것
+// isEmpty() 를 리턴하여 체크.. 결과 도출
 
 public static boolean isValid(String s) {
     	// initialize the stack
@@ -473,7 +490,7 @@ public static boolean isValid(String s) {
             if(c[i] == '(' || c[i] == '[' || c[i] == '{') {
                 // push the char
                 stack.push(c[i]);
-            // check if the closing brackets 
+            // check if the closing brackets appear after the corresponing open brankets
             } else if(c[i] == ')' && !stack.isEmpty() && stack.peek() == '(' ) {
                 stack.pop();
             } else if(c[i] == ']' && !stack.isEmpty() && stack.peek() == '[' ) {
@@ -493,3 +510,34 @@ public static boolean isValid(String s) {
 
 - Next Greater Element using Stack
 
+```java
+// An array containing the next greater element of each element from the input array. 
+// For the maximum value in the array, the next greater value is -1.
+int[] nextGreaterElement(int[] arr);
+
+// input
+arr = {4,6,3,2,8,1}
+
+// output
+result = {6,8,8,8,-1,-1}
+
+// using stack
+int[] result = new int[nums.length];
+
+Stack<Integer> stack = new Stack<>();
+
+// iterate through the input array in reverse order
+for(int i = nums.length -1; i >= 0; i--) {
+    // pop from the stack until we get the greater element on top of the stack
+    while(!stack.empty() && nums[i] >= stack.peak()) {
+        stack.pop();
+    }
+    // update the value of the current index in the result array
+    // to the value of the top of the stack
+    result[i] = stack.empty() ? -1 : stack.peek();
+    stack.push(nums[i]);
+}
+
+return result;
+
+```
