@@ -1,12 +1,13 @@
 ---
-title: "{ CS Concepts } SQL vs NoSQL"
-date: 2022-01-18 16:00:00 +07:00
-tags: [Software Engineering]
-description: Notes of Software Engineering
+title: "{ CS Concepts } Normalization"
+date: 2024-01-10 18:00:00 +07:00
+tags: [Normalization, Database]
+description: Notes of Normalization
 ---
 
 ## Normalization is an essential process in database design
 ---
+
 ### Purpose 
 - to ensure efficient, consistent, and reliable data structures.
 - It involves organizing data in a database into tables to minimize redundancy and dependency.
