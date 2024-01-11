@@ -1,0 +1,51 @@
+---
+title: "{ AWS } AWS Basic"
+date: 2023-08-04 14:00:00 +07:00
+tags: [AWS, EC2, AWS Console, IAM]
+---
+
+## What is Amazon Web Services
+
+- Amazon Web Services (AWS) is a subsidiary of Amazon.com that provides an on-demand cloud computing platform.
+- It stands out in the cloud computing market for offering a wide range of services and features, surpassing many other cloud providers.
+- It covers computing resources, storage, and databases, machine learning, AI, data lakes & analytics, and the Internet of Things (IoT).
+
+#### Key points about AWS :
+
+- Virtual Computing: AWS enables the partitioning of virtual servers, allowing users to create and manage multiple virtual machines on a single physical server.
+
+- IaaS (Infrastructure as a Service): AWS offers fundamental computing resources over the internet => Users can access and manage these resources without needing to invest in physical hardware.
+
+- Other Cloud Computing Services: Google Cloud Platform and Microsoft Azure. These platforms provide a range of services for businesses and individuals to deploy and manage applications, data, and services.
+
+- Comparison with On-Premise Data Centers: Contrasting AWS with on-premise data centers (IDC), which are maintained within an organization's own facilities.
+
+## IAM - Identity and Access Management
+
+- Identity and Access Management (IAM) provides a framework for controlling access to your AWS resources
+- It allows you to centrally manage permissions and access controls for users, groups, and roles across your entire AWS infrastructure.
+- It's important to note that IAM is not specific to any AWS region, meaning the configurations and permissions apply globally.
+
+## EC2 - Elastic Compute Cloud
+
+#### Creating an instance 
+
+- This means renting a virtual computer that is configured based on a selected AMI. 
+- This configuration encompasses factors such as OS, CPU, RAM allocation, storage setup, and runtime environment.
+- Users can customize these parameters according to their specific needs.
+
+#### EC2 Instance Types
+
+- EC2 instance types cater to various performance characteristics, making them suitable for different purposes.
+
+- Depending on your focus and requirements, you can choose an instance type.
+
+- Examples...
+1. Compute-Optimized: Prioritizing CPU performance, making them suitable for compute-intensive tasks.
+2. Memory-Optimized: Emphasizing high RAM capacity, making them ideal for memory-intensive applications.
+3. Storage-Optimized: Demanding substantial storage capacity and high throughput.
+
+
+### Establish SSH connections to remote servers (On macOS)
+
+- 
