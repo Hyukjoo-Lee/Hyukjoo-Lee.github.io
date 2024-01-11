@@ -13,20 +13,20 @@ description: Notes of ACID properties
 
 ### Components of ACID
 1. **Atomicity**
-   - Transactions are treated as a single unit.
-   - They either complete in their entirety or not at all, ensuring no partial transactions.
+- Transactions are treated as a single unit.
+- They either complete in their entirety or not at all, ensuring no partial transactions.
 
 2. **Consistency**
-   - This property ensures that all database rules and constraints are adhered to during transactions.
-   - It maintains data integrity throughout the transaction process.
+- This property ensures that all database rules and constraints are adhered to during transactions.
+- It maintains data integrity throughout the transaction process.
 
 3. **Isolation**
-   - Transactions are executed independently from one another.
-   - This prevents interference and conflicts from concurrent transactions.
+- Transactions are executed independently from one another.
+- This prevents interference and conflicts from concurrent transactions.
 
 4. **Durability**
-   - Once a transaction is committed, it is permanent, even in the event of a system failure.
-   - This guarantees the persistence of transaction results.
+- Once a transaction is committed, it is permanent, even in the event of a system failure.
+- This guarantees the persistence of transaction results.
 
 ### Transactions Involving Multiple Databases
 - Transactions can involve operations across two or more databases, treating them as a single cohesive database.

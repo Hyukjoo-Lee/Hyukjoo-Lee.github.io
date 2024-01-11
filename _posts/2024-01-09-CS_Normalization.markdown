@@ -49,9 +49,6 @@ Normalization, through these stages, helps in structuring databases in a way tha
 
 - BCNF: 3NF의 약간의 개선 form.. 테이블에 여러 후보 키가 있고 이들이 서로 중첩되는 경우
 
-| CourseID | ProfessorName | Department |
-|----------|---------------|------------|
-
 여기서는 'CourseID'와 'ProfessorName'이 함께 기본 키를 형성합니다. 동일한 과목을 다른 교수가 가르칠 수 있고 교수가 여러 과목을 가르칠 수 있기 때문입니다. 그러나 Department 는 교수 이름에 의해서만 결정된다고 가정해 보면 BCNF 를 충족하지 않음. ProfessorName 가 Department 를 결정하기 때문에
 
 1. **Courses Table**: Contains `CourseID` and `ProfessorName`.
@@ -61,6 +58,7 @@ Normalization, through these stages, helps in structuring databases in a way tha
 
 여기서 ProfessorName 은 Professors 테이블의 후보키로 Department를 결정한다. 이 구조는 변칙을 해결하고 BCNF를 준수
 
-### 각 정규화 단계는 특정 유형의 중복과 의존성을 해결하며, 이러한 문제들이 방치되면 다양한 데이터 무결성 문제를 야기할 수 있습니다. 정규화는 데이터베이스 설계를 간소화하고 쿼리에 대한 효율성을 높이며 데이터 일관성을 보장하는 데 도움이 됩니다.
+### 각 정규화 단계는 특정 유형의 중복과 의존성을 해결하며, 이러한 문제들이 방치되면 다양한 데이터 무결성 문제를 야기할 수 있습니다. 
+### 정규화는 데이터베이스 설계를 간소화하고 쿼리에 대한 효율성을 높이며 데이터 일관성을 보장하는 데 도움이 됩니다.
 
 ---

@@ -37,4 +37,5 @@ description: Notes of the difference between SQL and NoSQL
 ### NoSQL의 장점
 - Unstructured large data volumes을 유연하게 다루며, 데이터 확장 시 빠른 처리가 가능합니다.
 - 데이터 변경이나 다양한 데이터 형식의 조작에 유연합니다.
+
 ---
