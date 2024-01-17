@@ -1,0 +1,52 @@
+---
+title: "{ CS Concepts } PaaS"
+date: 2024-01-17 14:00:00 +07:00
+tags: [Transaction, Isolation, Database, ACID]
+description: Notes of Transaction isolation level
+---
+
+## Categories of cloud computing - SaaS, PaaS, IaaS
+
+---
+
+## Cloud Service Models Overview
+
+### **1. SaaS (Software as a Service)**
+- **Definition:** A software delivery model where applications are hosted and managed by a service provider, accessible via the internet.
+- **Key Characteristics:**
+  - No installation or updating required on user machines.
+  - Accessible from anywhere, anytime.
+  - Subscription-based, not a one-time license fee.
+  - User-friendly and less complex.
+- **Example:** SaaS is like a Taxi - You don't worry about the car's details, you just pay for the service.
+
+### **2. PaaS (Platform as a Service)**
+- **Definition:** A service offering a platform to users for developing, running, and managing applications without the complexity of building and maintaining infrastructure.
+- **Key Characteristics:**
+  - Builds on IaaS, providing an additional layer for app development.
+  - Tools for building, testing, deploying, and managing applications.
+  - Removes the need to manage underlying infrastructure.
+- **Example:** PaaS is akin to Renting a car - You don't focus much on the car's details; you're just using it temporarily and pay for the usage like gas and toll fees.
+- **Pros:**
+  - Fast and easy to use.
+  - Simple to create and delete resources.
+  - Cost-effective, reducing the need for full-time IT administration.
+  - Wide range of tools available in marketplaces.
+- **Cons:**
+  - Reduced control over the environment.
+  - Potential for vendor lock-in.
+  - Performance and scalability may vary with user load.
+
+### **3. IaaS (Infrastructure as a Service)**
+- **Definition:** A form of cloud computing that provides virtualized computing resources over the internet.
+- **Key Characteristics:**
+  - Offers computing, networking, and storage resources.
+  - Target users are System/IT Administrators.
+  - Examples include AWS, Azure, and IBM Cloud.
+- **Example:** IaaS is similar to Leasing a car - You choose specific features, performance, color, etc., and pay for the lease, gas, and toll fees.
+
+### **Responsibilities in Cloud Computing**
+- **Developer Provides:** Application and Data.
+- **Vendor Provides:** Runtime, Operating System, Middleware, Virtualization, Networking, Storage, Server.
+
+---
