@@ -1,8 +1,8 @@
 ---
 title: "{ CS Concepts } PaaS"
 date: 2024-01-17 14:00:00 +07:00
-tags: [Transaction, Isolation, Database, ACID]
-description: Notes of Transaction isolation level
+tags: [SaaS, PaaS, IaaS, Cloud computing]
+description: Notes of categories of cloud computing
 ---
 
 ## Categories of cloud computing - SaaS, PaaS, IaaS
@@ -26,7 +26,7 @@ description: Notes of Transaction isolation level
   - Builds on IaaS, providing an additional layer for app development.
   - Tools for building, testing, deploying, and managing applications.
   - Removes the need to manage underlying infrastructure.
-- **Example:** PaaS is akin to Renting a car - You don't focus much on the car's details; you're just using it temporarily and pay for the usage like gas and toll fees.
+- **Example:** PaaS is a kind of Renting a car - You don't focus much on the car's details; you're just using it temporarily and pay for the usage like gas and toll fees.
 - **Pros:**
   - Fast and easy to use.
   - Simple to create and delete resources.
