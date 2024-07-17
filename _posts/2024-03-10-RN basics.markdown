@@ -1,8 +1,6 @@
 ---
 title: "{ RN } RN Basics"
 date: 2024-03-10 21:00:00 +07:00
-# tags: [R, Isolation, Database, ACID]
-# description: Notes of Transaction isolation level
 ---
 
 ## What is stylesheets in RN?

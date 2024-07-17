@@ -1,8 +1,7 @@
 ---
-title: "{ RN } JS concepts review"
+title: "{ RN } JS concepts"
 date: 2024-03-25 21:00:00 +07:00
 tags: [Async, Sync, JS]
-# description: Notes of Transaction isolation level
 ---
 
 ## 자바스크립트 복습

@@ -1,7 +1,7 @@
 ---
-title: "{ CS Concepts  } Module coupling and cohesion"
+title: "{ CS Concepts } Module coupling and cohesion"
 date: 2024-07-17 21:00:00 +07:00
-tags: [모듈 결합도, 모듈 응집도]
+tags: [module, coupling, cohesion]
 ---
 
 ### 모듈이란?
