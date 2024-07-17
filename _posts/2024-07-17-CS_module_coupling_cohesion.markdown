@@ -1,5 +1,5 @@
 ---
-title: "{ 정보시스템 } 모듈 결합도, 응집도"
+title: "{ CS Concepts  } Module coupling and cohesion"
 date: 2024-07-17 21:00:00 +07:00
 tags: [모듈 결합도, 모듈 응집도]
 ---
