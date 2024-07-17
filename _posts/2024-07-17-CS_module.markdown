@@ -1,5 +1,5 @@
 ---
-title: "{ CS Concepts } Module coupling and cohesion"
+title: "{ CS Concepts } Module"
 date: 2024-07-17 21:00:00 +07:00
 tags: [module, coupling, cohesion]
 ---
