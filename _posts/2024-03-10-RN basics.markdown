@@ -1,0 +1,109 @@
+---
+title: "{ RN } RN Basics"
+date: 2024-03-10 21:00:00 +07:00
+# tags: [R, Isolation, Database, ACID]
+# description: Notes of Transaction isolation level
+---
+
+## What is stylesheets in RN?
+
+1. A way to apply a set of styles to a component
+2. A way to create a consistent look and feel for your app
+3. A way to make your app responsive to diffferent devices and screen sizes
+
+## How do stylesheets in React Native work?
+
+By using JS objects that contain a set of properties and values that define the styles for a component
+
+## What are the disadvantages of using inline styles in RN?
+
+1. can make the code less readable and harder to maintain
+2. can lead to performance issues if used excessively
+3. can only be appied to a specific component
+
+## Stylesheet 적용법
+
+컴포넌트 파일에 임포트 하고 스타일 prop 를 사용하여 콤포넌트에 적용.
+
+## 추천
+
+최대한 stylesheets 을 활용하는 것을 추천하고 인라인은 필수적일 때만 적용
+
+```javascript
+import React from "react";
+import { Text } from "react-native";
+import style from "./style";
+const MyText = () => {
+  return (
+    <Text style={[style.text, style.text1, { color: "green" }]}>
+      Hello, React Native World!
+    </Text>
+  );
+};
+
+export default MyText;
+```
+
+### View component = div = container
+
+```javascript
+import React from "react";
+import { SafeAreaView, View, Text } from "react-native";
+import MyText from "./components/MyText/MyText";
+
+const App = () => {
+  return (
+    <SafeAreaView>
+      {/* Header */}
+      <View style={{ backgroundColor: "blue", height: 100 }}>
+        <Text>This is going to be our header component</Text>
+      </View>
+      {/* Body  */}
+      <View style={{ backgroundColor: "grey" }}>
+        <MyText />
+        <MyText />
+      </View>
+      {/* Footer */}
+      <View>
+        <Text>All rights reserved</Text>
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default App;
+```
+
+### Props & PropTypes
+
+- Props: 부모 컴포넌트에서 자식 컴포넌트에 데이터를 전달하는 방법
+- PropTypes: 데이터를 확실하게 전달하게 하기 위한, 대이터 타입을 확실히 하기 위한, strings,numbers,booleans, and more
+
+### Event Handling
+
+```js
+import React from "react";
+import { Alert, Text, View } from "react-native";
+import Proptypes from "prop-types";
+
+// 아이템 컴포넌트가 이름과 가격을 데이터로 받아들이도록 설정
+const Item = ({ name, price }) => {
+  const onNameClicked = () => {
+    alert("Name is clicked");
+  };
+  return (
+    <View>
+      <Text onPress={onNameClicked}>{name}</Text>
+      <Text>{price}</Text>
+    </View>
+  );
+};
+
+// Props' type 설정
+Item.Proptypes = {
+  name: Proptypes.string.isRequired,
+  price: Proptypes.number.isRequired,
+};
+
+export default Item;
+```

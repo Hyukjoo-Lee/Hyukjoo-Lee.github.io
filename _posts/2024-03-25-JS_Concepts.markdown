@@ -10,7 +10,6 @@ tags: [Async, Sync, JS]
 - var - 함수 범위 또는 전역 범위에서 유효
 - let - 해당 블록 내에서만 접근 가능
 - const - 상수
-
 - Object
 
 ```js
