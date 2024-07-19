@@ -1,10 +1,10 @@
 ---
-title: "{ CS } Practice Question 1"
+title: "{ CS } Practical Question 1"
 date: 2024-07-18 22:00:00 +07:00
 tags: [Information System, Practice question]
 ---
 
-## 정보시스템 기반 기술 문제
+## 정보시스템 기반 기술 관련 문제
 
 ### 공간 구역성(spatial locality)과 밀접한 관계가 있는 것은?
 
