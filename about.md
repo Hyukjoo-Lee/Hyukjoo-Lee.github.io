@@ -6,7 +6,7 @@ excerpt: Hello peeps, I'm student of computer science from South Korea, living i
 comments: false
 ---
 
-I am Jaydon Lee, Full-stack developer from Korea, currently living in Vancouver, Canada. 
+I am Jaydon Lee, Full-stack developer from Korea.
 I really enjoy learning web&app technology. This is a blog for documentation about my programming journey.
 
 If you have any question, just email me 😄.

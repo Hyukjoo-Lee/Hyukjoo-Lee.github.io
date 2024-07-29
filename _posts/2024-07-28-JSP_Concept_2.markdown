@@ -1,5 +1,5 @@
 ---
-title: "{ CS } JSP_2"
+title: "{ JSP } JSP_2"
 date: 2024-07-28 18:00:00 +07:00
 tags: [JSP, Servlet, setAttribute, getRequestDispatcher, sendRedirect]
 ---
