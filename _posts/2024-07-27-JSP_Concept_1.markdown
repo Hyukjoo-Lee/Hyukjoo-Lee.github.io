@@ -1,6 +1,6 @@
 ---
 title: "{ CS } JSP_1"
-date: 2024-07-28 22:00:00 +07:00
+date: 2024-07-27 22:00:00 +07:00
 tags: [JSP, Servlet, Response, Request]
 ---
 
