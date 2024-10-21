@@ -1,5 +1,5 @@
 ---
-title: "{ ReactJS } React Basic"
+title: "{ Git } Git Basic Commands"
 date: 2024-10-21 10:50:00 KST
 tags: [Git]
 ---
