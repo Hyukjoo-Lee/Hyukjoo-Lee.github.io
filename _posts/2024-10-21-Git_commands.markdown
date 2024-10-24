@@ -63,3 +63,10 @@ tags: [Git]
 - `git config --global user.email`: 전역 사용자 이메일을 확인합니다.
 - `git config user.name`: 현재 프로젝트의 사용자 이름을 확인합니다.
 - `git config user.email`: 현재 프로젝트의 사용자 이메일을 확인합니다.
+
+## 기타 커멘드들
+
+- `git fetch --prune` : 원격 브랜치 정보 갱신
+- `git branch -a` : 모든 브랜치 표시
+- `git push origin -d [브랜치이름]` : 원격 브랜치에 있는 브랜치 삭제
+- `git checkout -b [브랜치이름] origin/[브랜치이름]` : 원격 브랜치를 기반으로 로컬 브랜치를 생성한 후, 그 브랜치로 이동
