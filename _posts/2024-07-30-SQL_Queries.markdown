@@ -1,7 +1,7 @@
 ---
 title: "{ SQL } Basic SQL Queries"
 date: 2024-07-3O 03:00:00 KST
-tags: [Session]
+tags: [Oracle, SQL, Queries]
 ---
 
 # SQL 노트 정리
