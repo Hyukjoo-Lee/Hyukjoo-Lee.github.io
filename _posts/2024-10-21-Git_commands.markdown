@@ -70,3 +70,50 @@ tags: [Git]
 - `git branch -a` : 모든 브랜치 표시
 - `git push origin -d [브랜치이름]` : 원격 브랜치에 있는 브랜치 삭제
 - `git checkout -b [브랜치이름] origin/[브랜치이름]` : 원격 브랜치를 기반으로 로컬 브랜치를 생성한 후, 그 브랜치로 이동
+
+## 메인 로컬 브랜치와 메인 원격 브랜치의 커밋이 다른 경우 해결 방법
+
+### 문제 상황
+
+```bash
+git status
+```
+
+````
+
+출력:
+
+```plaintext
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+```
+
+**원인:**
+로컬 브랜치(`main`)와 원격 브랜치(`origin/main`)에 각각 다른 커밋이 1개씩 존재하여 충돌이 발생한 상태입니다.
+
+---
+
+### 문제 해결 방법: 로컬 커밋을 취소하고 원격의 최신 커밋 가져오기
+
+1. **로컬 커밋 취소하기**
+
+   로컬에서 이미 만든 커밋을 취소하고, 원격 커밋 상태로 브랜치를 맞추기 위해 `reset` 명령어를 사용합니다:
+
+   ```bash
+   git reset --hard origin/main
+   ```
+
+   이 명령어를 실행하면 로컬 브랜치가 원격 브랜치와 같은 상태로 맞춰지며, 로컬 커밋은 삭제됩니다.
+
+   > ⚠️ **주의:** `--hard` 옵션을 사용하면 로컬 변경 사항이 완전히 삭제되므로, 필요한 경우 백업을 먼저 해두세요.
+
+2. **원격 최신 상태로 맞추기**
+
+   이제 로컬이 원격과 동일한 상태가 되었으므로, `git pull` 명령어로 원격의 최신 상태를 그대로 가져올 수 있습니다.
+
+   ```bash
+   git pull origin main
+   ```
+````
