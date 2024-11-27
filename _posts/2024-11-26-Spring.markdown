@@ -1,0 +1,83 @@
+---
+title: "{ Spring } Spring"
+date: 2024-11-26 03:00:00 KST
+tags: [Spring, MVC]
+---
+
+## Spring 이란?
+
+- Java 기반 웹 애플리케이션 개발에 유용한 오픈소스 툴 모음.
+- 개발 시간과 코드 작성 시간을 단축하고 유지보수성을 높임.
+- 의존성 주입(Dependency Injection)으로 객체 간의 결합도를 낮추고 확장성을 높임.
+- 의존성이란 어떤 객체가 혼자 일을 처리할 수 없다는 것을 의미
+- 종류
+
+  - 생성자를 통한 의존성 주입
+
+    ```java
+    // Pillowcase라는 상품 객체를 생성
+    Product product = new Pillowcase();
+
+    // Store 객체를 생성하면서 의존성(Dependency)으로 Product 객체를 주입
+    Store store = new Store(product);
+    ```
+
+  - setter() method 를 통한 의존성 주입
+
+---
+
+### MVC 패턴 (모델2)
+
+- **Model:** 데이터와 비즈니스 로직을 처리
+- **View:** 사용자 인터페이스를 담당
+- **Controller:** 사용자의 요청(Request)을 받고 Model과 View 사이의 상호작용을 관리
+
+추가적으로:
+
+- **MyBatis**: 데이터베이스 쿼리 처리 라이브러리
+- **Kubernetes**: 스케일링 및 배포를 위한 컨테이너 오케스트레이션 도구
+
+---
+
+### Maven vs Gradle
+
+- Maven: XML 기반의 설정 파일(pom.xml)을 사용, 정형화된 구조
+- Gradle: Groovy 또는 Kotlin DSL 기반의 스크립트(build.gradle)를 사용, 가독성 및 유연성에서 우수
+
+---
+
+### HandlerMapping
+
+- 요청 URL과 이를 처리할 컨트롤러 메서드를 매핑.
+- Spring에서는 @RequestMapping, @GetMapping 등의 어노테이션을 사용하여 매핑을 자동화.
+
+---
+
+### Spring 프로젝트 구조
+
+- src/main/
+- src/main/webapp: 리소스 자원
+- 뷰페이지 파일 경로로 webapp/WEB-INF/views
+- pom.xml: 메이븐 설정 파일, gradle 에서는 build.gradle
+
+```bash
+project-root/
+├── src/
+│   ├── main/                      # 애플리케이션의 주요 소스 코드 및 리소스 디렉터리
+│   │   ├── java/                  # Java 소스 파일 (클래스, 서비스, 컨트롤러 등)
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── App.java  # Java 소스 코드 예시
+│   │   ├── resources/             # 설정 파일 및 애플리케이션 리소스 (예: properties, XML)
+│   │   │   ├── application.properties
+│   │   │   └── logback.xml
+│   │   └── webapp/                # 웹 애플리케이션 리소스
+│   │       ├── WEB-INF/           # JSP 파일 및 Spring 설정 파일 (보호된 경로)
+│   │       │   └── views/         # JSP 뷰 파일 디렉터리
+│   │       └── static/            # 정적 리소스 (HTML, CSS, JS 등)
+│   └── test/                      # 테스트 관련 소스 코드 디렉터리
+│       ├── java/                  # 테스트용 Java 코드
+│       └── resources/             # 테스트 리소스 파일
+├── pom.xml                        # Maven 설정 파일 (의존성, 플러그인, 빌드 설정 등)
+└── target/                        # Maven 빌드 산출물 (JAR, WAR 파일 등)
+```
