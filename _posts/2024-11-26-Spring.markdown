@@ -10,19 +10,20 @@ tags: [Spring, MVC]
 - 개발 시간과 코드 작성 시간을 단축하고 유지보수성을 높임.
 - 의존성 주입(Dependency Injection)으로 객체 간의 결합도를 낮추고 확장성을 높임.
 - 의존성이란 어떤 객체가 혼자 일을 처리할 수 없다는 것을 의미
-- 종류
 
-  - 생성자를 통한 의존성 주입
+#### 종류
 
-    ```java
-    // Pillowcase라는 상품 객체를 생성
-    Product product = new Pillowcase();
+- 생성자를 통한 의존성 주입
 
-    // Store 객체를 생성하면서 의존성(Dependency)으로 Product 객체를 주입
-    Store store = new Store(product);
-    ```
+  ```java
+  // Pillowcase라는 상품 객체를 생성
+  Product product = new Pillowcase();
 
-  - setter() method 를 통한 의존성 주입
+  // Store 객체를 생성하면서 의존성(Dependency)으로 Product 객체를 주입
+  Store store = new Store(product);
+  ```
+
+- setter() method 를 통한 의존성 주입
 
 ---
 
@@ -81,3 +82,12 @@ project-root/
 ├── pom.xml                        # Maven 설정 파일 (의존성, 플러그인, 빌드 설정 등)
 └── target/                        # Maven 빌드 산출물 (JAR, WAR 파일 등)
 ```
+
+### REST
+
+- REST(Representational State Transfer): 하나의 URI 는 하나의 고유한 리소스를 대표하도록 설계된다는 의미.
+- 서버에 접근하는 다양한 기기에서 공통으로 데이터를 처리할 수 있는 규칙
+- REST API 는 외부에서 특정 URI 를 통해서 사용자가 원하는 정보를 제공하는 방식이다
+- @RestController - REST 방식의 데이터 처리를 위해서 사용하는 Annotation
+- @RestController 는 JSP 와 같은 뷰페이지를 만들지 않고, 보통 JSON, 문자열, xml 같은 데이터 자체를 웹 브라우저에 반환한다.
+- 예시) 리턴
