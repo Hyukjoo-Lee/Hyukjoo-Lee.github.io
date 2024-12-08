@@ -13,17 +13,17 @@ tags: [Spring, MVC]
 
 #### 종류
 
-- 생성자를 통한 의존성 주입
+###### 생성자를 통한 의존성 주입
 
-  ```java
-  // Pillowcase라는 상품 객체를 생성
-  Product product = new Pillowcase();
+```java
+// Pillowcase라는 상품 객체를 생성
+Product product = new Pillowcase();
 
-  // Store 객체를 생성하면서 의존성(Dependency)으로 Product 객체를 주입
-  Store store = new Store(product);
-  ```
+// Store 객체를 생성하면서 의존성(Dependency)으로 Product 객체를 주입
+Store store = new Store(product);
+```
 
-- setter() method 를 통한 의존성 주입
+###### setter() method 를 통한 의존성 주입
 
 ---
 

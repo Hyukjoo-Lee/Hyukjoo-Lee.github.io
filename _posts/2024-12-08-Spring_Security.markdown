@@ -45,7 +45,7 @@ tags: [Spring, JWT, Spring Security]
 
 ---
 
-### **JWT (JSON Web Token)**
+#### 5. **JWT (JSON Web Token)**
 
 - **정의**: 클레임(claim)이라 불리는 정보를 JSON 형태로 안전하게 전송하기 위한 토큰 기반의 표준.
 - **용도**: 인증 및 정보 교환.
